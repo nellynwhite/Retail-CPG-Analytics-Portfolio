@@ -22,7 +22,7 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 
 ---
  
-## [Dashboard][View Dashboard PDF](documentation/Retail_CPG_Analytics.pdf) — 7 Pages
+## [Dashboard](documentation/Retail_CPG_Analytics.pdf) — 7 Pages
 
 | Page | Title | Primary KPIs |
 |---|---|---|
