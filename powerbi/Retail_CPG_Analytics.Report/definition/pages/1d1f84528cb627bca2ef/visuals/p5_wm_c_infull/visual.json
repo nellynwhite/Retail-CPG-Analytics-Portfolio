@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_wm_c_infull",
+  "position": {
+    "x": 234,
+    "y": 110,
+    "z": 5,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "In-Full Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.In-Full Rate",
+              "nativeQueryRef": "In-Full Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'In-Full Rate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

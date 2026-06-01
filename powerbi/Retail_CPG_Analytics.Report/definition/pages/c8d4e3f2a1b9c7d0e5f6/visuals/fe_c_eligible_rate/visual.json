@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fe_c_eligible_rate",
+  "position": {
+    "x": 330,
+    "y": 110,
+    "z": 16,
+    "height": 95,
+    "width": 285,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Fine Eligible Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Fine Eligible Rate",
+              "nativeQueryRef": "Fine Eligible Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fine Eligible Rate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

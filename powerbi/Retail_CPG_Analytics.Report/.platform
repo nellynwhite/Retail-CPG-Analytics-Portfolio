@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Retail_CPG_Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f2772817-c36a-4cc0-87fb-d21081b9ec55"
+  }
+}

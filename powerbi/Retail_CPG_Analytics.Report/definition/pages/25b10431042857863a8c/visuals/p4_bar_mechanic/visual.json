@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p4_bar_mechanic",
+  "position": {
+    "x": 30,
+    "y": 260,
+    "z": 4,
+    "height": 270,
+    "width": 560,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_PromoMechanism"
+                    }
+                  },
+                  "Property": "promo_type"
+                }
+              },
+              "queryRef": "Dim_PromoMechanism.promo_type",
+              "nativeQueryRef": "promo_type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PromoCalendar"
+                    }
+                  },
+                  "Property": "Avg Promo Lift Pct"
+                }
+              },
+              "queryRef": "Fact_PromoCalendar.Avg Promo Lift Pct",
+              "nativeQueryRef": "Avg Promo Lift Pct"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PromoCalendar"
+                    }
+                  },
+                  "Property": "Avg Trade ROI"
+                }
+              },
+              "queryRef": "Fact_PromoCalendar.Avg Trade ROI",
+              "nativeQueryRef": "Avg Trade ROI"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

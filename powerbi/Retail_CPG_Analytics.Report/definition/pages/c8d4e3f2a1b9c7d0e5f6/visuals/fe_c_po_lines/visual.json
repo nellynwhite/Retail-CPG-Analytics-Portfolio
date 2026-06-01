@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fe_c_po_lines",
+  "position": {
+    "x": 930,
+    "y": 110,
+    "z": 18,
+    "height": 95,
+    "width": 280,
+    "tabOrder": 18
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Fine Eligible PO Lines"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Fine Eligible PO Lines",
+              "nativeQueryRef": "Fine Eligible PO Lines"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fine Eligible PO Lines'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

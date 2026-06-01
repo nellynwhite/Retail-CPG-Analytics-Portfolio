@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_wm_c_ontime",
+  "position": {
+    "x": 240,
+    "y": 110,
+    "z": 4,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Freight-Adjusted On-Time Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Freight-Adjusted On-Time Rate",
+              "nativeQueryRef": "Freight-Adjusted On-Time Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'On-Time / Collect Ready'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5_wm_c_supplier_fine",
+  "position": {
+    "x": 1050,
+    "y": 220,
+    "z": 17,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 17
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Supplier Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Supplier Fine Exposure $",
+              "nativeQueryRef": "Supplier Fine Exposure $"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Supplier-Owned Fine $'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a273102b13f4db264277",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Supplier Fine Exposure $"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

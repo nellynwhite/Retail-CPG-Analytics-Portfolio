@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5_wm_c_fine",
+  "position": {
+    "x": 642,
+    "y": 110,
+    "z": 7,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "OTIF Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.OTIF Fine Exposure $",
+              "nativeQueryRef": "OTIF Fine Exposure $"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fine Exposure'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75d814b52e46cb575071",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "OTIF Fine Exposure $"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

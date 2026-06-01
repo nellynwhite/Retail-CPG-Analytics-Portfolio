@@ -1,0 +1,99 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p4_tbl_promo",
+  "position": {
+    "x": 610,
+    "y": 550,
+    "z": 7,
+    "height": 240,
+    "width": 620,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Item"
+                    }
+                  },
+                  "Property": "item_description"
+                }
+              },
+              "queryRef": "Dim_Item.item_description",
+              "nativeQueryRef": "item_description",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_PromoMechanism"
+                    }
+                  },
+                  "Property": "promo_type"
+                }
+              },
+              "queryRef": "Dim_PromoMechanism.promo_type",
+              "nativeQueryRef": "promo_type",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PromoCalendar"
+                    }
+                  },
+                  "Property": "Avg Promo Lift Pct"
+                }
+              },
+              "queryRef": "Fact_PromoCalendar.Avg Promo Lift Pct",
+              "nativeQueryRef": "Avg Promo Lift Pct",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PromoCalendar"
+                    }
+                  },
+                  "Property": "Total Trade Spend"
+                }
+              },
+              "queryRef": "Fact_PromoCalendar.Total Trade Spend",
+              "nativeQueryRef": "Total Trade Spend",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PromoCalendar"
+                    }
+                  },
+                  "Property": "Avg Trade ROI"
+                }
+              },
+              "queryRef": "Fact_PromoCalendar.Avg Trade ROI",
+              "nativeQueryRef": "Avg Trade ROI",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

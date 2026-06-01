@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5_wm_donut_timing",
+  "position": {
+    "x": 642,
+    "y": 220,
+    "z": 13,
+    "height": 260,
+    "width": 603,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "on_time_flag"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.on_time_flag",
+              "nativeQueryRef": "on_time_flag",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Fine Eligible PO Lines"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Fine Eligible PO Lines",
+              "nativeQueryRef": "Fine Eligible PO Lines"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Delivery Timing Split'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "421c981d50b2c82484f6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "on_time_flag"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "39062c21c49bcc45e5db",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Fine Eligible PO Lines"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

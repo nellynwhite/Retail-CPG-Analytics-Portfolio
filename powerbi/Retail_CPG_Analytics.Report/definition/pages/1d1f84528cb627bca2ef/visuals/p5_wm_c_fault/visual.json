@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_wm_c_fault",
+  "position": {
+    "x": 1050,
+    "y": 110,
+    "z": 9,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Walmart Fault Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Walmart Fault Rate",
+              "nativeQueryRef": "Walmart Fault Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'WM Fault Rate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

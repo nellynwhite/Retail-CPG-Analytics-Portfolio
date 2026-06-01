@@ -1,0 +1,231 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "p3_tbl_reorder",
+  "position": {
+    "x": 30,
+    "y": 550,
+    "z": 6,
+    "height": 240,
+    "width": 1200,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Store"
+                    }
+                  },
+                  "Property": "store_number"
+                }
+              },
+              "queryRef": "Dim_Store.store_number",
+              "nativeQueryRef": "store_number",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Item"
+                    }
+                  },
+                  "Property": "item_description"
+                }
+              },
+              "queryRef": "Dim_Item.item_description",
+              "nativeQueryRef": "item_description",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Category"
+                    }
+                  },
+                  "Property": "category_name"
+                }
+              },
+              "queryRef": "Dim_Category.category_name",
+              "nativeQueryRef": "category_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Inventory"
+                    }
+                  },
+                  "Property": "In-Stock Rate"
+                }
+              },
+              "queryRef": "Fact_Inventory.In-Stock Rate",
+              "nativeQueryRef": "In-Stock Rate",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Inventory"
+                    }
+                  },
+                  "Property": "Lost Sales Dollars"
+                }
+              },
+              "queryRef": "Fact_Inventory.Lost Sales Dollars",
+              "nativeQueryRef": "Lost Sales Dollars",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Inventory"
+                    }
+                  },
+                  "Property": "Avg WOS"
+                }
+              },
+              "queryRef": "Fact_Inventory.Avg WOS",
+              "nativeQueryRef": "Avg WOS",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Inventory"
+                    }
+                  },
+                  "Property": "WOS vs Target"
+                }
+              },
+              "queryRef": "Fact_Inventory.WOS vs Target",
+              "nativeQueryRef": "WOS vs Target",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0994d2e0b1905020b253",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Store"
+              }
+            },
+            "Property": "store_number"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6cc1d62dacdea1d846a7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Item"
+              }
+            },
+            "Property": "item_description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ab5484fc835be880125a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Category"
+              }
+            },
+            "Property": "category_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "445bbb3d0eb377c356a6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Inventory"
+              }
+            },
+            "Property": "In-Stock Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "03fd539c8d784909abdf",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Inventory"
+              }
+            },
+            "Property": "Lost Sales Dollars"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "837385310ffaff38a95a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Inventory"
+              }
+            },
+            "Property": "Avg WOS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "72291e59ed05ab3ab4bd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Inventory"
+              }
+            },
+            "Property": "WOS vs Target"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

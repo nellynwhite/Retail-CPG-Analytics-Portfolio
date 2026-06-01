@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "p3_line_lostsales",
+  "position": {
+    "x": 645.55023049888177,
+    "y": 259.89684604500434,
+    "z": 5,
+    "height": 270.67597790862203,
+    "width": 620.39892281710706,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Date"
+                    }
+                  },
+                  "Property": "fiscal_week_label"
+                }
+              },
+              "queryRef": "Dim_Date.fiscal_week_label",
+              "nativeQueryRef": "fiscal_week_label",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Inventory"
+                    }
+                  },
+                  "Property": "Lost Sales Dollars"
+                }
+              },
+              "queryRef": "Fact_Inventory.Lost Sales Dollars",
+              "nativeQueryRef": "Lost Sales Dollars"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Inventory"
+                    }
+                  },
+                  "Property": "Stockout Weeks"
+                }
+              },
+              "queryRef": "Fact_Inventory.Stockout Weeks",
+              "nativeQueryRef": "Stockout Weeks"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "71c6a42340cad7615c06",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Date"
+              }
+            },
+            "Property": "fiscal_week_label"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8e3ffb7eb5eadeebf40e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Inventory"
+              }
+            },
+            "Property": "Lost Sales Dollars"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9704149a2c09ce601792",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Inventory"
+              }
+            },
+            "Property": "Stockout Weeks"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

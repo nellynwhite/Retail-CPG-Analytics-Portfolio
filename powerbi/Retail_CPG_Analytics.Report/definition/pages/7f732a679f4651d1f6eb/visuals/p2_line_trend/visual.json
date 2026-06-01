@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p2_line_trend",
+  "position": {
+    "x": 30,
+    "y": 260,
+    "z": 4,
+    "height": 280,
+    "width": 760,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Date"
+                    }
+                  },
+                  "Property": "fiscal_week_label"
+                }
+              },
+              "queryRef": "Dim_Date.fiscal_week_label",
+              "nativeQueryRef": "fiscal_week_label",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales TY",
+              "nativeQueryRef": "Sales TY"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales LY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales LY",
+              "nativeQueryRef": "Sales LY"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "p2_tbl_items",
+  "position": {
+    "x": 30,
+    "y": 560,
+    "z": 6,
+    "height": 230,
+    "width": 1200,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Item"
+                    }
+                  },
+                  "Property": "item_description"
+                }
+              },
+              "queryRef": "Dim_Item.item_description",
+              "nativeQueryRef": "item_description",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Category"
+                    }
+                  },
+                  "Property": "category_name"
+                }
+              },
+              "queryRef": "Dim_Category.category_name",
+              "nativeQueryRef": "category_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales TY",
+              "nativeQueryRef": "Sales TY",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales LY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales LY",
+              "nativeQueryRef": "Sales LY",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "YoY Dollar"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.YoY Dollar",
+              "nativeQueryRef": "YoY Dollar",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "YoY Pct"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.YoY Pct",
+              "nativeQueryRef": "YoY Pct",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "ASP TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.ASP TY",
+              "nativeQueryRef": "ASP TY",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1dfed0896340d67000bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Item"
+              }
+            },
+            "Property": "item_description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7715b52e43a947d761c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Category"
+              }
+            },
+            "Property": "category_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "974111ddf041c08e6c65",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "Sales TY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "57196fff69f8ef3379c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "Sales LY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "812fa7facaa5d8821f1b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "YoY Dollar"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0a8b7b8b847c4cc8964f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "YoY Pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4170f7915c00bccaa6ea",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "ASP TY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

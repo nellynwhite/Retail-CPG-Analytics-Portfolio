@@ -1,0 +1,323 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5_wm_tbl_scorecard",
+  "position": {
+    "x": 609.90049751243782,
+    "y": 491.59203980099505,
+    "z": 11,
+    "height": 328.407960199005,
+    "width": 670.07462686567169,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Supplier"
+                    }
+                  },
+                  "Property": "supplier_name"
+                }
+              },
+              "queryRef": "Dim_Supplier.supplier_name",
+              "nativeQueryRef": "supplier_name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "On-Time Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.On-Time Rate",
+              "nativeQueryRef": "On-Time Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "In-Full Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.In-Full Rate",
+              "nativeQueryRef": "In-Full Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "OTIF Rate (Walmart Standard)"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.OTIF Rate (Walmart Standard)",
+              "nativeQueryRef": "OTIF Rate (Walmart Standard)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "On-Time Gap vs Goal"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.On-Time Gap vs Goal",
+              "nativeQueryRef": "On-Time Gap vs Goal"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "In-Full Gap vs Goal"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.In-Full Gap vs Goal",
+              "nativeQueryRef": "In-Full Gap vs Goal"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "OTIF Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.OTIF Fine Exposure $",
+              "nativeQueryRef": "OTIF Fine Exposure $"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Supplier Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Supplier Fine Exposure $",
+              "nativeQueryRef": "Supplier Fine Exposure $"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "WM Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.WM Fine Exposure $",
+              "nativeQueryRef": "WM Fine Exposure $"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Fine Eligible Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Fine Eligible Rate",
+              "nativeQueryRef": "Fine Eligible Rate"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Supplier OTIF Scorecard'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "eabf71317842d97152ba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Supplier"
+              }
+            },
+            "Property": "supplier_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef812fbf7c983f88f847",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "On-Time Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f9c4b6fdeab1ec6ee7a3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "In-Full Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1a3e991484e07f73dbf2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "OTIF Rate (Walmart Standard)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5fac8531ac29aa23ef1f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "On-Time Gap vs Goal"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fe6d616a6045f0e160d3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "In-Full Gap vs Goal"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b0034ffd6796906fb120",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "OTIF Fine Exposure $"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c27a584adb99213af35f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Fine Eligible Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "769c27c3f23e225fcc3e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Supplier Fine Exposure $"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a671403ea7f73c53756e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "WM Fine Exposure $"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

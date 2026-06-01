@@ -1,0 +1,252 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "matrix_cat",
+  "position": {
+    "x": 30,
+    "y": 550,
+    "z": 7,
+    "height": 240,
+    "width": 1200,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Category"
+                    }
+                  },
+                  "Property": "category_name"
+                }
+              },
+              "queryRef": "Dim_Category.category_name",
+              "nativeQueryRef": "category_name",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales TY",
+              "nativeQueryRef": "Sales TY",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales LY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales LY",
+              "nativeQueryRef": "Sales LY",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "YoY Dollar"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.YoY Dollar",
+              "nativeQueryRef": "YoY Dollar",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "YoY Pct"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.YoY Pct",
+              "nativeQueryRef": "YoY Pct",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Gross Profit TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Gross Profit TY",
+              "nativeQueryRef": "Gross Profit TY",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "GM Rate TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.GM Rate TY",
+              "nativeQueryRef": "GM Rate TY",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_WeeklySales"
+                  }
+                },
+                "Property": "Gross Profit TY"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "476fdab319db836ba2ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Category"
+              }
+            },
+            "Property": "category_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3a7c3f4ada0a04e769f1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "Sales TY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d2e176df32ddd0cf7b7c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "Sales LY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "857f7801d631dba5028d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "YoY Dollar"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e874e311ebc00449da32",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "YoY Pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a5b3453dcad4a7871b27",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "GM Rate TY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6308b66f68ff3f58fa6e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_WeeklySales"
+              }
+            },
+            "Property": "Gross Profit TY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

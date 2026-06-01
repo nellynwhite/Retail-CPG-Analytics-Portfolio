@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fe_header_title",
+  "position": {
+    "x": 16,
+    "y": 6,
+    "z": 19,
+    "height": 83,
+    "width": 720,
+    "tabOrder": 19
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Supply Chain — Fine Exposure & Root Cause",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "18px",
+                      "color": "#FFFFFF"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

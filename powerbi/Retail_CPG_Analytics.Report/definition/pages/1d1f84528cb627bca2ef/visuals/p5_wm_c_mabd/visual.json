@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_wm_c_mabd",
+  "position": {
+    "x": 846,
+    "y": 110,
+    "z": 8,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Avg Days vs MABD"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Avg Days vs MABD",
+              "nativeQueryRef": "Avg Days vs MABD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Days vs MABD'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,601 @@
+store_id,store_number,region,state,store_format,market_number,urbanicity,market_cluster,volume_tier,comp_store_flag,avg_weekly_footfall,distribution_center
+101,101,South,GA,Supercenter,116,Suburban,B,Mid,1,10428,DC_Central
+102,102,West,OR,Supercenter,142,Urban,C,Low,1,19296,DC_North
+103,103,Midwest,MO,Supercenter,130,Rural,E,Mid,1,15813,DC_Central
+104,104,Midwest,OH,Supercenter,116,Rural,E,Mid,1,22414,DC_East
+105,105,South,OK,Supercenter,112,Suburban,B,High,1,19801,DC_South
+106,106,South,NC,Supercenter,117,Rural,E,High,1,19745,DC_Central
+107,107,South,SC,Supercenter,116,Rural,B,High,1,21025,DC_Central
+108,108,East,CT,Supercenter,112,Suburban,E,Low,1,11356,DC_South
+109,109,Midwest,NE,Supercenter,108,Rural,E,Mid,1,22288,DC_North
+110,110,Midwest,KS,Supercenter,120,Rural,B,Mid,1,14540,DC_South
+111,111,South,TX,Supercenter,103,Rural,D,High,1,24422,DC_Central
+112,112,Mountain,ID,Neighborhood Market,116,Urban,E,Low,1,11342,DC_North
+113,113,East,VA,Supercenter,130,Suburban,C,Low,1,17078,DC_North
+114,114,South,AR,Supercenter,145,Suburban,D,High,1,10844,DC_South
+115,115,South,OK,Neighborhood Market,123,Suburban,B,High,0,18396,DC_Central
+116,116,South,TN,Discount Store,128,Urban,D,High,0,21998,DC_East
+117,117,South,GA,Supercenter,140,Urban,A,Mid,1,21261,DC_Central
+118,118,Midwest,MI,Supercenter,105,Suburban,A,Mid,1,11093,DC_West
+119,119,South,NC,Neighborhood Market,120,Urban,E,Mid,1,19722,DC_East
+120,120,South,LA,Supercenter,140,Suburban,E,Mid,1,19645,DC_North
+121,121,Midwest,KS,Supercenter,144,Urban,C,Mid,1,23083,DC_East
+122,122,South,LA,Supercenter,101,Rural,D,High,1,8988,DC_North
+123,123,South,AL,Supercenter,130,Rural,A,Mid,1,14446,DC_North
+124,124,South,NC,Supercenter,121,Suburban,E,Mid,1,24335,DC_East
+125,125,South,NC,Supercenter,120,Urban,D,Mid,1,24133,DC_North
+126,126,East,NJ,Supercenter,106,Urban,E,Low,1,9682,DC_North
+127,127,South,AR,Supercenter,122,Rural,E,High,1,13626,DC_West
+128,128,Midwest,WI,Supercenter,118,Rural,A,Mid,1,15424,DC_Central
+129,129,Midwest,IN,Supercenter,108,Urban,A,Mid,1,20857,DC_Central
+130,130,South,MS,Supercenter,139,Urban,E,High,1,20155,DC_West
+131,131,Midwest,IL,Supercenter,132,Urban,B,Mid,1,19425,DC_East
+132,132,South,AL,Neighborhood Market,133,Urban,E,High,0,9980,DC_South
+133,133,South,OK,Supercenter,116,Urban,E,High,1,23522,DC_South
+134,134,West,CA,Supercenter,112,Urban,C,Low,1,16984,DC_South
+135,135,Mountain,ID,Supercenter,138,Suburban,C,Low,1,23883,DC_West
+136,136,East,NJ,Supercenter,134,Urban,C,Low,1,13390,DC_West
+137,137,South,NC,Supercenter,114,Rural,B,Mid,1,9607,DC_North
+138,138,South,AR,Supercenter,136,Suburban,B,High,1,14573,DC_South
+139,139,Midwest,NE,Supercenter,133,Urban,E,Mid,1,13776,DC_East
+140,140,South,AL,Supercenter,123,Rural,C,Mid,1,11676,DC_East
+141,141,South,TX,Supercenter,150,Suburban,B,High,1,11380,DC_South
+142,142,South,OK,Supercenter,145,Rural,A,Mid,1,16711,DC_South
+143,143,South,AR,Supercenter,102,Urban,E,High,1,16782,DC_South
+144,144,West,CA,Supercenter,141,Urban,D,Low,1,21997,DC_West
+145,145,South,FL,Supercenter,121,Urban,E,Mid,1,14342,DC_West
+146,146,Midwest,KS,Neighborhood Market,102,Urban,D,Mid,0,14059,DC_West
+147,147,South,NC,Supercenter,127,Suburban,C,Mid,1,16884,DC_Central
+148,148,Midwest,WI,Supercenter,109,Suburban,D,Mid,1,13655,DC_East
+149,149,Midwest,MN,Neighborhood Market,101,Rural,C,Mid,1,20091,DC_East
+150,150,South,AR,Supercenter,111,Urban,A,High,1,23251,DC_North
+151,151,Mountain,ID,Supercenter,103,Rural,D,Low,1,8526,DC_West
+152,152,East,MD,Supercenter,123,Suburban,E,Low,1,11224,DC_Central
+153,153,West,UT,Supercenter,126,Urban,C,Low,1,23069,DC_Central
+154,154,West,NV,Supercenter,104,Urban,E,Low,1,19536,DC_East
+155,155,Midwest,KS,Supercenter,118,Suburban,B,Mid,1,21547,DC_West
+156,156,West,WA,Supercenter,106,Suburban,C,Low,1,9763,DC_North
+157,157,South,GA,Supercenter,135,Suburban,D,High,1,16712,DC_West
+158,158,South,OK,Supercenter,122,Suburban,C,High,1,13797,DC_South
+159,159,South,MS,Supercenter,143,Suburban,E,High,1,17208,DC_West
+160,160,South,FL,Supercenter,115,Urban,A,Mid,1,13109,DC_South
+161,161,South,SC,Supercenter,122,Suburban,C,Mid,1,24500,DC_South
+162,162,South,OK,Discount Store,137,Urban,D,Mid,0,10433,DC_North
+163,163,East,VA,Supercenter,142,Urban,B,Low,1,24967,DC_East
+164,164,South,TN,Supercenter,112,Suburban,A,Mid,1,12167,DC_West
+165,165,South,GA,Supercenter,147,Suburban,B,Mid,1,16357,DC_South
+166,166,Midwest,MO,Supercenter,149,Urban,C,Mid,1,14154,DC_West
+167,167,South,LA,Supercenter,142,Suburban,E,High,1,16920,DC_East
+168,168,East,VA,Supercenter,138,Suburban,E,Low,1,8213,DC_East
+169,169,South,TN,Supercenter,118,Suburban,D,High,1,11762,DC_Central
+170,170,Mountain,NM,Supercenter,145,Rural,E,Low,1,21399,DC_East
+171,171,East,DE,Supercenter,135,Urban,A,Low,1,17768,DC_North
+172,172,South,TN,Neighborhood Market,130,Rural,E,High,0,18640,DC_South
+173,173,South,AL,Supercenter,124,Suburban,D,High,1,14731,DC_Central
+174,174,East,MA,Supercenter,142,Rural,C,Low,1,13791,DC_North
+175,175,Midwest,IN,Supercenter,130,Suburban,C,Mid,1,23822,DC_West
+176,176,Midwest,IN,Discount Store,114,Rural,E,Mid,0,16783,DC_South
+177,177,East,NY,Supercenter,106,Suburban,B,Low,1,21621,DC_East
+178,178,South,FL,Supercenter,103,Rural,C,High,1,24019,DC_South
+179,179,South,FL,Discount Store,116,Rural,E,Mid,0,10720,DC_West
+180,180,South,NC,Neighborhood Market,107,Rural,D,High,0,16905,DC_Central
+181,181,East,DE,Neighborhood Market,114,Urban,E,Low,1,17127,DC_Central
+182,182,Midwest,MO,Supercenter,109,Rural,C,Mid,1,24385,DC_Central
+183,183,South,FL,Supercenter,115,Urban,D,Mid,1,14368,DC_East
+184,184,South,MS,Supercenter,121,Suburban,E,High,1,22056,DC_North
+185,185,South,TX,Discount Store,135,Rural,A,Mid,0,20236,DC_North
+186,186,South,TX,Supercenter,102,Suburban,D,Mid,1,22451,DC_South
+187,187,Midwest,OH,Supercenter,127,Suburban,A,Mid,1,18433,DC_East
+188,188,Midwest,MN,Supercenter,102,Rural,B,Mid,1,23525,DC_Central
+189,189,West,CA,Neighborhood Market,135,Urban,D,Low,1,8089,DC_Central
+190,190,South,AL,Supercenter,118,Rural,A,Mid,1,18361,DC_West
+191,191,South,TN,Supercenter,114,Suburban,C,High,1,24369,DC_West
+192,192,Midwest,WI,Supercenter,120,Suburban,C,Mid,1,11041,DC_Central
+193,193,East,NJ,Supercenter,118,Rural,B,Low,1,8105,DC_Central
+194,194,Midwest,OH,Supercenter,110,Urban,D,Mid,1,17078,DC_East
+195,195,East,NJ,Supercenter,125,Urban,D,Low,1,14090,DC_North
+196,196,South,FL,Supercenter,102,Suburban,D,Mid,1,14082,DC_West
+197,197,Midwest,MN,Supercenter,125,Suburban,B,Mid,1,9925,DC_North
+198,198,South,AR,Supercenter,133,Urban,D,Mid,1,14917,DC_East
+199,199,South,TN,Supercenter,136,Rural,C,High,1,8552,DC_Central
+200,200,South,AL,Supercenter,131,Suburban,A,High,1,11911,DC_North
+201,201,South,AL,Supercenter,114,Urban,C,High,1,11389,DC_Central
+202,202,Midwest,IL,Supercenter,101,Suburban,C,Mid,1,21629,DC_Central
+203,203,South,AR,Supercenter,146,Rural,A,Mid,1,10430,DC_South
+204,204,Midwest,NE,Supercenter,116,Urban,C,Mid,1,8458,DC_North
+205,205,West,AZ,Supercenter,146,Suburban,B,Low,1,21395,DC_North
+206,206,South,AR,Discount Store,103,Rural,A,High,0,8207,DC_Central
+207,207,South,TX,Supercenter,135,Suburban,C,Mid,1,8899,DC_East
+208,208,East,PA,Neighborhood Market,141,Rural,E,Low,1,19653,DC_South
+209,209,South,AR,Supercenter,106,Rural,C,High,1,24405,DC_Central
+210,210,South,TN,Supercenter,125,Urban,B,High,1,16601,DC_West
+211,211,South,AR,Neighborhood Market,113,Rural,D,Mid,1,8894,DC_West
+212,212,South,LA,Supercenter,134,Suburban,C,High,1,8514,DC_South
+213,213,West,AZ,Supercenter,108,Rural,D,Low,1,12109,DC_East
+214,214,East,MA,Supercenter,121,Rural,E,Low,1,21258,DC_Central
+215,215,Midwest,MI,Supercenter,134,Urban,C,Mid,1,23313,DC_North
+216,216,East,NY,Discount Store,104,Rural,A,Low,0,23349,DC_South
+217,217,East,MA,Neighborhood Market,125,Rural,D,Low,1,15179,DC_East
+218,218,South,GA,Discount Store,115,Suburban,E,High,0,18326,DC_North
+219,219,West,AZ,Supercenter,104,Urban,A,Low,1,19787,DC_West
+220,220,Midwest,NE,Supercenter,145,Urban,A,Mid,1,9560,DC_West
+221,221,East,NY,Discount Store,112,Urban,A,Low,0,21612,DC_North
+222,222,West,UT,Supercenter,132,Rural,A,Low,1,12780,DC_South
+223,223,South,TX,Supercenter,132,Urban,C,Mid,1,19894,DC_West
+224,224,South,SC,Supercenter,128,Rural,C,High,1,10356,DC_Central
+225,225,South,GA,Supercenter,113,Rural,C,High,1,12790,DC_North
+226,226,South,AR,Neighborhood Market,131,Suburban,E,Mid,1,24690,DC_North
+227,227,East,DE,Supercenter,114,Suburban,E,Low,1,18181,DC_West
+228,228,East,NJ,Neighborhood Market,120,Suburban,E,Low,1,15057,DC_South
+229,229,South,OK,Supercenter,118,Suburban,B,High,1,24082,DC_Central
+230,230,Midwest,OH,Supercenter,129,Suburban,E,Mid,1,8661,DC_South
+231,231,South,TN,Supercenter,106,Rural,C,Mid,1,12644,DC_East
+232,232,South,AL,Neighborhood Market,132,Rural,C,High,1,23711,DC_East
+233,233,South,TN,Supercenter,129,Urban,B,High,1,10920,DC_West
+234,234,South,GA,Supercenter,143,Rural,B,Mid,1,24002,DC_West
+235,235,West,UT,Supercenter,102,Rural,E,Low,1,22025,DC_West
+236,236,South,TN,Neighborhood Market,123,Suburban,D,Mid,0,16946,DC_East
+237,237,Midwest,KS,Supercenter,119,Rural,B,Mid,1,20732,DC_South
+238,238,Midwest,WI,Neighborhood Market,131,Suburban,A,Mid,1,14236,DC_South
+239,239,South,FL,Supercenter,105,Urban,C,Mid,1,24309,DC_West
+240,240,Mountain,WY,Supercenter,119,Urban,A,Low,1,21518,DC_Central
+241,241,Mountain,SD,Supercenter,134,Rural,C,Low,1,8352,DC_South
+242,242,South,LA,Supercenter,110,Urban,C,Mid,1,15005,DC_East
+243,243,South,NC,Supercenter,125,Rural,B,Mid,1,22036,DC_North
+244,244,South,GA,Supercenter,102,Urban,B,Mid,1,24542,DC_North
+245,245,South,NC,Supercenter,111,Suburban,A,Mid,1,8956,DC_North
+246,246,South,LA,Neighborhood Market,150,Suburban,C,High,0,10071,DC_Central
+247,247,Midwest,IL,Supercenter,131,Suburban,A,Mid,1,16595,DC_West
+248,248,Midwest,OH,Supercenter,115,Suburban,D,Mid,1,23140,DC_East
+249,249,South,SC,Discount Store,109,Rural,A,High,0,20803,DC_Central
+250,250,South,AL,Supercenter,123,Urban,E,Mid,1,11453,DC_East
+251,251,West,AZ,Supercenter,119,Rural,A,Low,1,14675,DC_East
+252,252,South,OK,Discount Store,109,Suburban,E,High,0,8955,DC_West
+253,253,South,TN,Supercenter,135,Rural,E,High,1,14295,DC_North
+254,254,South,SC,Supercenter,121,Urban,E,Mid,1,23921,DC_West
+255,255,Mountain,NM,Supercenter,109,Rural,D,Low,1,23282,DC_Central
+256,256,South,NC,Neighborhood Market,128,Urban,A,High,1,12703,DC_Central
+257,257,Midwest,KS,Supercenter,146,Rural,A,Mid,1,14563,DC_Central
+258,258,East,MA,Supercenter,107,Urban,D,Low,1,20003,DC_West
+259,259,South,GA,Neighborhood Market,116,Urban,C,High,0,18817,DC_East
+260,260,Midwest,MN,Neighborhood Market,116,Suburban,B,Mid,1,19171,DC_East
+261,261,South,OK,Supercenter,133,Urban,A,Mid,1,20582,DC_South
+262,262,Midwest,NE,Supercenter,104,Suburban,B,Mid,1,20201,DC_Central
+263,263,Midwest,IA,Supercenter,104,Suburban,D,Mid,1,20473,DC_East
+264,264,Midwest,MI,Supercenter,139,Suburban,C,Mid,1,17461,DC_South
+265,265,South,LA,Supercenter,140,Rural,C,High,1,23596,DC_East
+266,266,East,MD,Supercenter,117,Rural,C,Low,1,8529,DC_Central
+267,267,South,FL,Neighborhood Market,137,Rural,D,Mid,1,20765,DC_North
+268,268,South,GA,Neighborhood Market,139,Rural,E,High,0,21910,DC_Central
+269,269,South,MS,Supercenter,129,Urban,E,High,1,19561,DC_West
+270,270,Midwest,MI,Neighborhood Market,136,Urban,B,Mid,1,17131,DC_East
+271,271,Midwest,IA,Supercenter,138,Rural,E,Mid,1,8525,DC_East
+272,272,South,TX,Neighborhood Market,139,Urban,E,High,1,24385,DC_West
+273,273,Midwest,OH,Supercenter,150,Urban,C,Mid,1,8374,DC_West
+274,274,South,TX,Supercenter,137,Suburban,C,High,1,20197,DC_North
+275,275,Midwest,IA,Neighborhood Market,135,Suburban,B,Mid,1,12648,DC_East
+276,276,South,AL,Supercenter,107,Suburban,A,High,1,10365,DC_East
+277,277,Midwest,IN,Supercenter,127,Suburban,B,Mid,1,9646,DC_North
+278,278,South,FL,Supercenter,128,Urban,B,Mid,1,8013,DC_South
+279,279,West,CA,Supercenter,122,Rural,D,Low,1,12599,DC_North
+280,280,South,NC,Supercenter,114,Urban,D,High,1,10278,DC_Central
+281,281,South,OK,Supercenter,107,Urban,B,Mid,1,22296,DC_East
+282,282,South,SC,Supercenter,137,Urban,B,High,1,11155,DC_West
+283,283,West,NV,Supercenter,122,Suburban,B,Low,1,16321,DC_Central
+284,284,West,NV,Supercenter,105,Suburban,E,Low,1,11814,DC_East
+285,285,South,AL,Supercenter,102,Suburban,D,Mid,1,21125,DC_North
+286,286,Midwest,MO,Discount Store,127,Rural,B,Mid,0,11216,DC_Central
+287,287,East,CT,Supercenter,121,Urban,C,Low,1,10113,DC_East
+288,288,Midwest,MO,Supercenter,138,Rural,C,Mid,1,18238,DC_South
+289,289,Midwest,IN,Supercenter,115,Suburban,E,Mid,1,21760,DC_South
+290,290,South,SC,Discount Store,121,Rural,E,High,0,20588,DC_West
+291,291,South,FL,Supercenter,110,Urban,A,High,1,11374,DC_East
+292,292,West,WA,Supercenter,123,Urban,A,Low,1,14430,DC_South
+293,293,West,OR,Supercenter,139,Suburban,A,Low,1,19970,DC_North
+294,294,Midwest,IL,Supercenter,105,Suburban,E,Mid,1,8629,DC_East
+295,295,South,LA,Supercenter,101,Rural,E,Mid,1,24653,DC_North
+296,296,South,FL,Neighborhood Market,113,Suburban,E,Mid,0,18831,DC_North
+297,297,Midwest,KS,Discount Store,121,Suburban,C,Mid,0,13724,DC_South
+298,298,West,CA,Supercenter,126,Urban,E,Low,1,19083,DC_East
+299,299,West,NV,Supercenter,150,Suburban,C,Low,1,21149,DC_Central
+300,300,East,DE,Discount Store,145,Suburban,A,Low,0,17472,DC_South
+301,301,Midwest,MN,Supercenter,121,Urban,A,Mid,1,14276,DC_South
+302,302,South,LA,Supercenter,118,Urban,A,High,1,23635,DC_East
+303,303,South,SC,Supercenter,137,Rural,B,High,1,13895,DC_East
+304,304,West,OR,Supercenter,145,Suburban,B,Low,1,21994,DC_North
+305,305,Midwest,KS,Supercenter,132,Urban,D,Mid,1,18552,DC_East
+306,306,South,LA,Supercenter,136,Rural,D,High,1,24959,DC_North
+307,307,South,TX,Discount Store,117,Rural,D,High,0,14099,DC_South
+308,308,Midwest,KS,Discount Store,135,Suburban,B,Mid,0,17499,DC_West
+309,309,South,LA,Supercenter,149,Suburban,B,High,1,11178,DC_Central
+310,310,South,AL,Supercenter,111,Rural,D,High,1,14116,DC_South
+311,311,Midwest,MI,Discount Store,121,Urban,D,Mid,0,23563,DC_East
+312,312,Midwest,NE,Neighborhood Market,126,Rural,E,Mid,1,11568,DC_Central
+313,313,Midwest,IA,Supercenter,104,Suburban,D,Mid,1,17847,DC_West
+314,314,South,OK,Discount Store,134,Urban,E,High,0,22135,DC_West
+315,315,Midwest,NE,Neighborhood Market,148,Urban,C,Mid,0,9742,DC_North
+316,316,South,AL,Supercenter,118,Rural,B,High,1,8619,DC_Central
+317,317,South,OK,Supercenter,140,Suburban,D,Mid,1,9939,DC_North
+318,318,Midwest,KS,Supercenter,135,Rural,B,Mid,1,24001,DC_South
+319,319,Midwest,WI,Supercenter,141,Rural,B,Mid,1,8968,DC_Central
+320,320,East,MD,Supercenter,129,Rural,B,Low,1,22846,DC_South
+321,321,Midwest,MO,Neighborhood Market,129,Urban,C,Mid,1,8281,DC_North
+322,322,Midwest,IA,Supercenter,138,Urban,A,Mid,1,23360,DC_Central
+323,323,South,SC,Supercenter,142,Suburban,D,High,1,14262,DC_North
+324,324,South,FL,Supercenter,121,Suburban,A,Mid,1,9058,DC_Central
+325,325,South,LA,Supercenter,142,Rural,A,Mid,1,18724,DC_North
+326,326,South,GA,Discount Store,113,Rural,A,High,0,13178,DC_West
+327,327,Mountain,WY,Supercenter,149,Rural,B,Low,1,14980,DC_North
+328,328,South,TX,Supercenter,141,Suburban,E,Mid,1,17200,DC_West
+329,329,West,UT,Supercenter,117,Urban,B,Low,1,9229,DC_North
+330,330,Midwest,IN,Supercenter,109,Urban,B,Mid,1,16467,DC_Central
+331,331,East,MD,Supercenter,141,Rural,A,Low,1,10289,DC_Central
+332,332,Midwest,OH,Supercenter,101,Rural,B,Mid,1,9239,DC_Central
+333,333,Midwest,MN,Supercenter,102,Rural,A,Mid,1,13370,DC_East
+334,334,South,AL,Supercenter,148,Rural,E,Mid,1,24170,DC_South
+335,335,South,FL,Supercenter,129,Suburban,D,High,1,8125,DC_Central
+336,336,Midwest,MI,Supercenter,133,Urban,A,Mid,1,20504,DC_West
+337,337,South,TN,Discount Store,110,Rural,E,Mid,0,23398,DC_Central
+338,338,South,LA,Supercenter,150,Suburban,D,High,1,14638,DC_East
+339,339,Midwest,KS,Supercenter,140,Rural,C,Mid,1,14570,DC_West
+340,340,South,GA,Supercenter,121,Rural,A,High,1,11249,DC_East
+341,341,West,CO,Supercenter,128,Urban,A,Low,1,17110,DC_West
+342,342,West,CA,Supercenter,111,Rural,C,Low,1,15595,DC_North
+343,343,West,NV,Supercenter,134,Urban,C,Low,1,21605,DC_South
+344,344,South,TN,Discount Store,108,Urban,A,Mid,0,20115,DC_South
+345,345,South,TN,Supercenter,122,Urban,C,High,1,14294,DC_East
+346,346,West,WA,Supercenter,108,Suburban,B,Low,1,13757,DC_South
+347,347,South,TX,Supercenter,149,Suburban,D,Mid,1,20595,DC_East
+348,348,Mountain,ND,Discount Store,115,Urban,D,Low,0,9969,DC_East
+349,349,Mountain,ID,Supercenter,117,Rural,D,Low,1,18985,DC_East
+350,350,East,MD,Supercenter,123,Urban,B,Low,1,12470,DC_South
+351,351,South,AR,Supercenter,124,Rural,C,Mid,1,18225,DC_East
+352,352,South,FL,Supercenter,145,Urban,E,Mid,1,17556,DC_South
+353,353,East,VA,Supercenter,119,Rural,C,Low,1,17206,DC_East
+354,354,South,FL,Neighborhood Market,105,Suburban,A,Mid,0,17991,DC_Central
+355,355,South,LA,Supercenter,132,Rural,D,High,1,15519,DC_East
+356,356,Midwest,MI,Supercenter,144,Urban,C,Mid,1,21669,DC_West
+357,357,West,UT,Supercenter,101,Suburban,E,Low,1,12612,DC_East
+358,358,Midwest,NE,Supercenter,123,Rural,A,Mid,1,20373,DC_North
+359,359,Midwest,IA,Supercenter,137,Rural,B,Mid,1,23552,DC_East
+360,360,South,AL,Supercenter,108,Rural,B,High,1,22646,DC_West
+361,361,Midwest,NE,Neighborhood Market,113,Rural,E,Mid,1,13238,DC_West
+362,362,Mountain,ID,Supercenter,108,Rural,A,Low,1,23577,DC_South
+363,363,South,SC,Supercenter,123,Suburban,D,High,1,23504,DC_Central
+364,364,Midwest,MN,Supercenter,143,Suburban,C,Mid,1,11719,DC_East
+365,365,West,CA,Supercenter,101,Suburban,A,Low,1,8302,DC_South
+366,366,Midwest,IN,Supercenter,145,Suburban,B,Mid,1,20144,DC_Central
+367,367,Midwest,IL,Supercenter,124,Urban,E,Mid,1,18055,DC_East
+368,368,Midwest,WI,Supercenter,135,Suburban,E,Mid,1,12440,DC_North
+369,369,South,NC,Neighborhood Market,124,Rural,C,Mid,0,11072,DC_East
+370,370,South,AR,Discount Store,117,Rural,E,Mid,0,21598,DC_West
+371,371,East,PA,Supercenter,105,Suburban,E,Low,1,22287,DC_West
+372,372,East,DE,Supercenter,120,Rural,A,Low,1,21965,DC_North
+373,373,East,MA,Supercenter,121,Suburban,D,Low,1,17519,DC_South
+374,374,West,WA,Supercenter,140,Rural,C,Low,1,21380,DC_Central
+375,375,Midwest,MN,Supercenter,131,Urban,A,Mid,1,19865,DC_East
+376,376,Midwest,IN,Supercenter,146,Urban,D,Mid,1,16125,DC_West
+377,377,East,CT,Supercenter,136,Suburban,A,Low,1,11291,DC_South
+378,378,Midwest,IN,Supercenter,111,Suburban,A,Mid,1,12033,DC_North
+379,379,Midwest,IN,Supercenter,115,Suburban,E,Mid,1,13105,DC_West
+380,380,East,PA,Supercenter,119,Rural,D,Low,1,16133,DC_North
+381,381,West,CA,Supercenter,107,Suburban,C,Low,1,24958,DC_East
+382,382,South,FL,Supercenter,128,Urban,C,Mid,1,13704,DC_Central
+383,383,South,FL,Supercenter,143,Rural,D,Mid,1,15848,DC_West
+384,384,South,AL,Supercenter,105,Suburban,E,High,1,20975,DC_West
+385,385,Midwest,IL,Neighborhood Market,105,Rural,B,Mid,1,14924,DC_East
+386,386,South,TX,Supercenter,130,Rural,A,High,1,8488,DC_South
+387,387,South,TX,Supercenter,132,Suburban,E,Mid,1,15114,DC_Central
+388,388,Midwest,MN,Supercenter,108,Rural,D,Mid,1,23740,DC_West
+389,389,South,MS,Supercenter,110,Urban,A,Mid,1,11173,DC_Central
+390,390,Midwest,IL,Supercenter,138,Urban,C,Mid,1,9667,DC_West
+391,391,South,SC,Supercenter,147,Rural,B,High,1,12114,DC_Central
+392,392,South,AR,Neighborhood Market,132,Suburban,C,High,0,11553,DC_North
+393,393,East,CT,Neighborhood Market,148,Rural,D,Low,1,15761,DC_West
+394,394,South,OK,Supercenter,128,Urban,A,Mid,1,9000,DC_Central
+395,395,South,AL,Supercenter,117,Rural,D,High,1,23638,DC_South
+396,396,Midwest,IN,Supercenter,131,Rural,A,Mid,1,13450,DC_North
+397,397,East,MD,Supercenter,108,Urban,E,Low,1,11712,DC_North
+398,398,South,NC,Neighborhood Market,140,Rural,B,High,0,9367,DC_South
+399,399,Midwest,IN,Supercenter,125,Rural,E,Mid,1,16189,DC_Central
+400,400,South,AR,Supercenter,109,Suburban,E,High,1,17013,DC_East
+401,401,South,AR,Supercenter,102,Suburban,D,High,1,24838,DC_South
+402,402,Midwest,IA,Supercenter,115,Urban,B,Mid,1,11726,DC_Central
+403,403,Midwest,NE,Supercenter,150,Urban,A,Mid,1,12806,DC_South
+404,404,Midwest,IL,Supercenter,103,Urban,A,Mid,1,10190,DC_South
+405,405,Midwest,IN,Supercenter,149,Suburban,C,Mid,1,17108,DC_West
+406,406,Mountain,WY,Neighborhood Market,136,Urban,A,Low,0,20178,DC_Central
+407,407,Midwest,WI,Neighborhood Market,104,Urban,D,Mid,1,10875,DC_East
+408,408,South,NC,Supercenter,114,Urban,E,Mid,1,13592,DC_West
+409,409,East,NJ,Supercenter,141,Suburban,E,Low,1,20592,DC_South
+410,410,South,TX,Supercenter,141,Rural,E,Mid,1,16927,DC_South
+411,411,South,TN,Supercenter,125,Urban,B,Mid,1,22437,DC_South
+412,412,South,TX,Supercenter,150,Rural,A,High,1,19530,DC_Central
+413,413,South,TN,Supercenter,110,Urban,D,High,1,15010,DC_Central
+414,414,Mountain,ND,Supercenter,121,Rural,B,Low,1,19207,DC_West
+415,415,East,NY,Supercenter,136,Suburban,C,Low,1,10989,DC_East
+416,416,Midwest,MI,Supercenter,112,Suburban,D,Mid,1,20040,DC_West
+417,417,South,AL,Supercenter,127,Urban,D,Mid,1,17218,DC_North
+418,418,South,LA,Discount Store,140,Rural,D,High,0,14471,DC_South
+419,419,South,GA,Neighborhood Market,102,Suburban,E,High,1,10863,DC_South
+420,420,South,LA,Supercenter,113,Urban,D,Mid,1,18693,DC_South
+421,421,Midwest,KS,Neighborhood Market,132,Urban,A,Mid,0,9177,DC_West
+422,422,Midwest,NE,Supercenter,131,Suburban,D,Mid,1,12760,DC_West
+423,423,Midwest,MI,Neighborhood Market,116,Suburban,E,Mid,0,8011,DC_South
+424,424,South,FL,Neighborhood Market,132,Urban,D,Mid,1,24353,DC_West
+425,425,West,AZ,Supercenter,132,Rural,C,Low,1,19556,DC_Central
+426,426,Midwest,IN,Supercenter,134,Rural,C,Mid,1,19563,DC_Central
+427,427,Midwest,MO,Supercenter,111,Rural,E,Mid,1,22051,DC_West
+428,428,Midwest,MI,Supercenter,110,Urban,A,Mid,1,19022,DC_South
+429,429,South,FL,Supercenter,115,Suburban,A,Mid,1,16234,DC_West
+430,430,South,AL,Supercenter,117,Urban,B,High,1,24173,DC_West
+431,431,South,MS,Supercenter,140,Suburban,E,Mid,1,21178,DC_West
+432,432,East,CT,Neighborhood Market,118,Rural,D,Low,1,14570,DC_North
+433,433,South,AL,Discount Store,109,Rural,E,High,0,8406,DC_Central
+434,434,South,TX,Supercenter,125,Suburban,B,High,1,17206,DC_East
+435,435,South,AR,Supercenter,140,Suburban,E,High,1,12431,DC_East
+436,436,South,GA,Supercenter,114,Urban,E,High,1,14542,DC_North
+437,437,East,CT,Supercenter,125,Rural,B,Low,1,16906,DC_West
+438,438,Midwest,NE,Discount Store,150,Urban,A,Mid,0,12146,DC_North
+439,439,South,NC,Supercenter,122,Urban,D,Mid,1,20046,DC_North
+440,440,South,SC,Supercenter,130,Urban,B,High,1,20611,DC_South
+441,441,South,TX,Supercenter,120,Rural,C,Mid,1,21076,DC_Central
+442,442,South,TX,Supercenter,121,Urban,A,Mid,1,24524,DC_East
+443,443,South,AR,Supercenter,144,Urban,C,High,1,12882,DC_West
+444,444,South,SC,Neighborhood Market,132,Urban,A,Mid,1,22113,DC_East
+445,445,South,FL,Supercenter,146,Urban,D,Mid,1,21645,DC_East
+446,446,Midwest,WI,Supercenter,149,Urban,D,Mid,1,14012,DC_Central
+447,447,Midwest,MO,Supercenter,121,Urban,E,Mid,1,15151,DC_East
+448,448,South,NC,Discount Store,135,Rural,C,High,0,11610,DC_East
+449,449,South,FL,Neighborhood Market,132,Urban,A,Mid,0,17884,DC_North
+450,450,Midwest,MN,Supercenter,130,Suburban,D,Mid,1,14894,DC_Central
+451,451,Midwest,IL,Supercenter,139,Urban,B,Mid,1,21467,DC_South
+452,452,East,PA,Supercenter,149,Urban,D,Low,1,24489,DC_West
+453,453,Midwest,MO,Supercenter,112,Rural,B,Mid,1,17873,DC_East
+454,454,South,OK,Discount Store,141,Rural,A,High,0,20289,DC_West
+455,455,South,MS,Supercenter,147,Suburban,D,High,1,20208,DC_South
+456,456,Midwest,IN,Supercenter,118,Suburban,D,Mid,1,18828,DC_West
+457,457,South,TN,Supercenter,121,Rural,A,High,1,10137,DC_South
+458,458,Midwest,NE,Supercenter,113,Rural,D,Mid,1,9286,DC_North
+459,459,West,CO,Supercenter,121,Urban,B,Low,1,23710,DC_East
+460,460,Midwest,KS,Supercenter,108,Rural,D,Mid,1,19371,DC_South
+461,461,South,TX,Supercenter,146,Suburban,C,Mid,1,23945,DC_West
+462,462,Midwest,OH,Supercenter,140,Urban,E,Mid,1,15052,DC_East
+463,463,South,TN,Supercenter,146,Suburban,B,Mid,1,11654,DC_North
+464,464,Midwest,MO,Supercenter,107,Urban,C,Mid,1,23600,DC_East
+465,465,West,CA,Supercenter,123,Rural,A,Low,1,16636,DC_South
+466,466,South,TN,Supercenter,144,Suburban,B,Mid,1,14441,DC_North
+467,467,Mountain,ID,Supercenter,132,Urban,E,Low,1,17667,DC_West
+468,468,West,CA,Supercenter,111,Urban,E,Low,1,20149,DC_North
+469,469,South,MS,Supercenter,122,Rural,A,High,1,9798,DC_North
+470,470,South,TN,Supercenter,122,Rural,A,High,1,17600,DC_Central
+471,471,South,NC,Supercenter,143,Rural,B,High,1,13495,DC_North
+472,472,South,LA,Discount Store,125,Suburban,D,High,0,17900,DC_North
+473,473,South,TX,Supercenter,122,Urban,A,High,1,21673,DC_East
+474,474,Midwest,OH,Supercenter,128,Rural,D,Mid,1,19130,DC_West
+475,475,South,LA,Supercenter,129,Suburban,C,High,1,23222,DC_East
+476,476,South,AL,Supercenter,113,Suburban,E,Mid,1,9300,DC_East
+477,477,East,NJ,Supercenter,118,Suburban,D,Low,1,17435,DC_South
+478,478,South,AL,Supercenter,102,Rural,E,High,1,12616,DC_East
+479,479,East,NY,Supercenter,129,Rural,D,Low,1,24393,DC_Central
+480,480,South,TX,Supercenter,121,Urban,C,Mid,1,18617,DC_Central
+481,481,South,TN,Supercenter,115,Urban,A,High,1,13752,DC_South
+482,482,Midwest,MI,Neighborhood Market,127,Rural,C,Mid,1,17852,DC_West
+483,483,Midwest,IA,Supercenter,150,Suburban,A,Mid,1,14295,DC_West
+484,484,West,OR,Supercenter,131,Suburban,A,Low,1,11225,DC_East
+485,485,Midwest,MO,Supercenter,115,Suburban,E,Mid,1,9316,DC_East
+486,486,East,DE,Supercenter,123,Urban,C,Low,1,20337,DC_East
+487,487,South,AL,Supercenter,124,Suburban,D,Mid,1,14807,DC_West
+488,488,South,GA,Supercenter,144,Urban,C,High,1,11683,DC_North
+489,489,East,PA,Supercenter,113,Urban,E,Low,1,15227,DC_Central
+490,490,East,MD,Neighborhood Market,122,Suburban,A,Low,1,11273,DC_North
+491,491,Mountain,MT,Neighborhood Market,143,Suburban,E,Low,1,8145,DC_North
+492,492,South,SC,Supercenter,137,Rural,B,Mid,1,13010,DC_West
+493,493,South,GA,Supercenter,133,Rural,B,Mid,1,24035,DC_North
+494,494,East,CT,Supercenter,103,Suburban,D,Low,1,11040,DC_South
+495,495,South,MS,Supercenter,119,Urban,E,Mid,1,17654,DC_East
+496,496,West,NV,Supercenter,123,Urban,D,Low,1,24866,DC_South
+497,497,East,VA,Discount Store,129,Urban,D,Low,0,22996,DC_Central
+498,498,South,TN,Supercenter,130,Urban,B,Mid,1,24336,DC_East
+499,499,East,PA,Discount Store,139,Urban,D,Low,0,16853,DC_North
+500,500,East,PA,Supercenter,144,Rural,B,Low,1,19695,DC_Central
+501,501,South,AR,Supercenter,147,Suburban,A,High,1,10852,DC_East
+502,502,West,NV,Supercenter,125,Rural,E,Low,1,24014,DC_North
+503,503,Midwest,OH,Neighborhood Market,137,Urban,D,Mid,0,8987,DC_South
+504,504,East,NY,Supercenter,147,Urban,B,Low,1,15622,DC_East
+505,505,South,NC,Neighborhood Market,108,Urban,C,Mid,1,17160,DC_North
+506,506,West,NV,Supercenter,142,Urban,D,Low,1,14652,DC_South
+507,507,South,FL,Supercenter,116,Suburban,A,Mid,1,15421,DC_Central
+508,508,South,SC,Neighborhood Market,108,Urban,A,High,1,8769,DC_Central
+509,509,West,AZ,Supercenter,101,Suburban,C,Low,1,22114,DC_Central
+510,510,South,TN,Supercenter,144,Urban,B,High,1,12358,DC_Central
+511,511,South,OK,Supercenter,105,Suburban,D,Mid,1,19543,DC_West
+512,512,West,OR,Discount Store,103,Rural,B,Low,0,13699,DC_East
+513,513,West,AZ,Discount Store,101,Urban,A,Low,0,9125,DC_East
+514,514,Midwest,WI,Supercenter,104,Suburban,B,Mid,1,18793,DC_West
+515,515,Midwest,KS,Supercenter,140,Rural,A,Mid,1,14764,DC_North
+516,516,South,AL,Discount Store,135,Urban,B,Mid,0,20323,DC_North
+517,517,South,MS,Supercenter,132,Urban,C,Mid,1,21031,DC_Central
+518,518,South,SC,Supercenter,142,Urban,E,Mid,1,22052,DC_South
+519,519,Midwest,MN,Discount Store,134,Suburban,C,Mid,0,20640,DC_North
+520,520,East,VA,Supercenter,143,Suburban,C,Low,1,15843,DC_South
+521,521,East,MD,Supercenter,125,Rural,E,Low,1,22210,DC_East
+522,522,East,NY,Supercenter,110,Suburban,E,Low,1,24456,DC_South
+523,523,South,MS,Discount Store,121,Suburban,D,High,0,18106,DC_East
+524,524,South,LA,Discount Store,146,Urban,D,Mid,0,13189,DC_West
+525,525,South,NC,Discount Store,139,Urban,C,High,0,10472,DC_West
+526,526,Midwest,MI,Supercenter,127,Urban,C,Mid,1,14704,DC_Central
+527,527,South,AL,Neighborhood Market,127,Urban,A,Mid,0,11713,DC_North
+528,528,West,CO,Neighborhood Market,102,Urban,A,Low,1,13051,DC_Central
+529,529,South,TX,Supercenter,141,Urban,D,Mid,1,18756,DC_East
+530,530,South,NC,Neighborhood Market,148,Urban,D,High,1,10475,DC_Central
+531,531,South,NC,Supercenter,113,Rural,A,High,1,11610,DC_South
+532,532,East,MD,Supercenter,109,Rural,A,Low,1,12255,DC_East
+533,533,Midwest,IN,Supercenter,136,Rural,B,Mid,1,22484,DC_West
+534,534,South,GA,Supercenter,122,Rural,B,High,1,9735,DC_North
+535,535,South,NC,Supercenter,142,Urban,A,High,1,16258,DC_East
+536,536,Midwest,MI,Supercenter,126,Rural,B,Mid,1,15979,DC_East
+537,537,South,MS,Supercenter,112,Urban,E,High,1,10428,DC_South
+538,538,East,VA,Supercenter,117,Rural,D,Low,1,20345,DC_North
+539,539,Midwest,MN,Supercenter,114,Suburban,D,Mid,1,15426,DC_West
+540,540,South,LA,Supercenter,114,Rural,A,High,1,16533,DC_East
+541,541,South,NC,Supercenter,134,Rural,C,High,1,13249,DC_East
+542,542,Mountain,ND,Neighborhood Market,120,Urban,A,Low,1,17686,DC_South
+543,543,South,LA,Supercenter,111,Rural,B,Mid,1,22109,DC_Central
+544,544,South,MS,Supercenter,116,Suburban,C,Mid,1,8661,DC_West
+545,545,East,MD,Neighborhood Market,131,Urban,B,Low,0,20075,DC_North
+546,546,West,CO,Supercenter,106,Urban,E,Low,1,22788,DC_East
+547,547,Mountain,ND,Supercenter,119,Rural,B,Low,1,18060,DC_East
+548,548,East,NY,Supercenter,137,Urban,E,Low,1,23836,DC_West
+549,549,South,LA,Neighborhood Market,104,Urban,E,Mid,0,18526,DC_Central
+550,550,South,MS,Supercenter,147,Urban,B,High,1,11374,DC_East
+551,551,East,VA,Neighborhood Market,104,Urban,B,Low,0,8207,DC_West
+552,552,Midwest,IA,Supercenter,120,Urban,E,Mid,1,10665,DC_South
+553,553,South,FL,Discount Store,110,Urban,C,Mid,0,8632,DC_Central
+554,554,West,AZ,Neighborhood Market,124,Suburban,E,Low,1,11083,DC_North
+555,555,South,LA,Discount Store,135,Rural,D,High,0,21711,DC_East
+556,556,South,TX,Supercenter,126,Suburban,E,Mid,1,18123,DC_West
+557,557,South,TX,Neighborhood Market,137,Urban,C,High,1,15123,DC_South
+558,558,South,AR,Supercenter,138,Urban,D,Mid,1,18754,DC_North
+559,559,South,LA,Supercenter,121,Rural,A,High,1,9679,DC_West
+560,560,South,SC,Supercenter,140,Suburban,A,High,1,23901,DC_West
+561,561,South,TN,Neighborhood Market,139,Rural,C,High,0,8236,DC_North
+562,562,Midwest,MI,Discount Store,121,Suburban,E,Mid,0,15446,DC_South
+563,563,Midwest,NE,Neighborhood Market,110,Urban,B,Mid,1,12443,DC_South
+564,564,Midwest,MI,Supercenter,138,Rural,C,Mid,1,23463,DC_Central
+565,565,Mountain,ID,Supercenter,146,Rural,D,Low,1,16555,DC_East
+566,566,South,GA,Supercenter,104,Urban,D,Mid,1,24669,DC_North
+567,567,South,FL,Supercenter,145,Rural,A,Mid,1,8148,DC_North
+568,568,East,PA,Supercenter,120,Suburban,D,Low,1,21395,DC_North
+569,569,South,SC,Supercenter,117,Suburban,C,High,1,12895,DC_South
+570,570,Mountain,ID,Supercenter,107,Suburban,D,Low,1,19023,DC_East
+571,571,South,SC,Supercenter,104,Suburban,C,High,1,18699,DC_Central
+572,572,Mountain,SD,Supercenter,129,Urban,B,Low,1,17715,DC_West
+573,573,South,LA,Supercenter,114,Rural,A,High,1,24163,DC_West
+574,574,West,WA,Supercenter,103,Suburban,D,Low,1,13782,DC_North
+575,575,Midwest,OH,Discount Store,124,Urban,C,Mid,0,24724,DC_East
+576,576,Mountain,NM,Supercenter,137,Rural,E,Low,1,10817,DC_South
+577,577,South,AR,Supercenter,116,Rural,A,High,1,23096,DC_East
+578,578,Midwest,WI,Supercenter,104,Urban,B,Mid,1,13299,DC_East
+579,579,Mountain,ID,Supercenter,124,Urban,C,Low,1,17917,DC_South
+580,580,Midwest,NE,Discount Store,134,Suburban,B,Mid,0,11267,DC_North
+581,581,Midwest,MI,Neighborhood Market,130,Rural,B,Mid,1,12406,DC_East
+582,582,Midwest,OH,Supercenter,118,Rural,D,Mid,1,18382,DC_West
+583,583,South,AL,Supercenter,119,Urban,D,Mid,1,12437,DC_South
+584,584,Midwest,IN,Neighborhood Market,131,Rural,C,Mid,0,13435,DC_Central
+585,585,Midwest,OH,Discount Store,119,Suburban,E,Mid,0,12107,DC_North
+586,586,West,WA,Supercenter,149,Rural,C,Low,1,8560,DC_South
+587,587,South,TN,Supercenter,146,Urban,E,High,1,20329,DC_Central
+588,588,South,SC,Supercenter,119,Urban,B,Mid,1,9826,DC_Central
+589,589,West,CA,Discount Store,122,Suburban,A,Low,0,19421,DC_East
+590,590,West,UT,Supercenter,124,Suburban,C,Low,1,20265,DC_East
+591,591,South,SC,Discount Store,145,Rural,C,Mid,0,15629,DC_East
+592,592,Midwest,WI,Supercenter,112,Rural,E,Mid,1,16325,DC_South
+593,593,South,SC,Supercenter,130,Urban,B,Mid,1,15693,DC_South
+594,594,South,TN,Supercenter,138,Suburban,B,High,1,16264,DC_North
+595,595,South,SC,Supercenter,131,Suburban,E,Mid,1,20686,DC_East
+596,596,South,FL,Supercenter,136,Suburban,B,Mid,1,21716,DC_Central
+597,597,Midwest,WI,Supercenter,119,Rural,D,Mid,1,14721,DC_West
+598,598,South,AR,Supercenter,148,Suburban,A,High,1,15373,DC_North
+599,599,Mountain,WY,Neighborhood Market,145,Urban,C,Low,1,13907,DC_South
+600,600,Mountain,ND,Supercenter,136,Urban,A,Low,1,24127,DC_North
+601,601,Midwest,IN,Supercenter,130,Rural,C,Mid,1,13656,DC_North
+602,602,Midwest,IL,Discount Store,149,Rural,D,Mid,0,16984,DC_North
+603,603,South,TX,Neighborhood Market,133,Suburban,B,Mid,0,16286,DC_North
+604,604,East,DE,Discount Store,118,Rural,E,Low,0,13901,DC_West
+605,605,Midwest,IA,Discount Store,149,Urban,D,Mid,0,12917,DC_East
+606,606,South,LA,Supercenter,128,Suburban,A,High,1,16429,DC_Central
+607,607,West,WA,Supercenter,147,Urban,E,Low,1,22716,DC_North
+608,608,East,CT,Supercenter,111,Suburban,B,Low,1,23795,DC_North
+609,609,West,AZ,Supercenter,145,Rural,D,Low,1,19138,DC_North
+610,610,Midwest,MN,Supercenter,133,Suburban,E,Mid,1,10530,DC_East
+611,611,Midwest,KS,Neighborhood Market,117,Suburban,D,Mid,1,13772,DC_South
+612,612,South,OK,Supercenter,106,Urban,D,Mid,1,23476,DC_South
+613,613,West,WA,Supercenter,104,Urban,B,Low,1,23751,DC_West
+614,614,East,NY,Supercenter,120,Suburban,C,Low,1,10964,DC_South
+615,615,South,AR,Supercenter,148,Rural,E,High,1,15137,DC_North
+616,616,South,GA,Supercenter,147,Rural,B,High,1,24920,DC_North
+617,617,South,TX,Supercenter,127,Urban,D,Mid,1,21891,DC_North
+618,618,East,MD,Neighborhood Market,115,Rural,B,Low,0,15340,DC_West
+619,619,Mountain,MT,Supercenter,106,Urban,C,Low,1,15967,DC_North
+620,620,South,OK,Supercenter,147,Rural,E,High,1,20415,DC_South
+621,621,Midwest,KS,Neighborhood Market,114,Suburban,C,Mid,0,19871,DC_East
+622,622,South,AR,Discount Store,111,Urban,A,Mid,0,19916,DC_East
+623,623,Mountain,ID,Neighborhood Market,139,Urban,E,Low,0,16734,DC_Central
+624,624,East,PA,Neighborhood Market,109,Suburban,C,Low,1,8845,DC_South
+625,625,East,MA,Supercenter,126,Urban,D,Low,1,10494,DC_North
+626,626,South,MS,Supercenter,116,Rural,E,Mid,1,20677,DC_East
+627,627,South,OK,Supercenter,105,Rural,E,Mid,1,20330,DC_South
+628,628,South,GA,Supercenter,110,Urban,B,Mid,1,13179,DC_East
+629,629,South,NC,Supercenter,150,Rural,D,High,1,14610,DC_North
+630,630,East,NY,Supercenter,103,Urban,A,Low,1,14430,DC_East
+631,631,East,PA,Supercenter,113,Suburban,C,Low,1,15154,DC_Central
+632,632,Mountain,NM,Supercenter,143,Urban,B,Low,1,21828,DC_Central
+633,633,Mountain,ID,Supercenter,149,Suburban,C,Low,1,18145,DC_East
+634,634,Midwest,MN,Supercenter,130,Rural,A,Mid,1,14488,DC_South
+635,635,East,MA,Supercenter,145,Suburban,A,Low,1,11850,DC_South
+636,636,West,CA,Supercenter,106,Rural,E,Low,1,21564,DC_South
+637,637,East,NY,Neighborhood Market,117,Urban,A,Low,0,13078,DC_East
+638,638,South,OK,Supercenter,145,Rural,C,High,1,20168,DC_South
+639,639,South,GA,Supercenter,119,Urban,D,Mid,1,13448,DC_North
+640,640,South,MS,Supercenter,142,Urban,D,High,1,17074,DC_Central
+641,641,West,AZ,Neighborhood Market,135,Suburban,E,Low,1,14406,DC_North
+642,642,Midwest,IA,Supercenter,146,Suburban,C,Mid,1,16800,DC_South
+643,643,South,SC,Supercenter,126,Suburban,C,High,1,22083,DC_North
+644,644,Midwest,OH,Supercenter,105,Suburban,A,Mid,1,9638,DC_South
+645,645,Midwest,MI,Supercenter,129,Rural,C,Mid,1,18340,DC_East
+646,646,South,TN,Neighborhood Market,137,Rural,B,Mid,0,9382,DC_North
+647,647,South,AR,Neighborhood Market,120,Rural,A,High,1,9403,DC_East
+648,648,Midwest,MI,Supercenter,149,Urban,B,Mid,1,17011,DC_East
+649,649,Midwest,WI,Neighborhood Market,121,Rural,E,Mid,0,11292,DC_West
+650,650,East,VA,Neighborhood Market,110,Rural,D,Low,0,17011,DC_South
+651,651,Midwest,IA,Supercenter,105,Rural,E,Mid,1,8419,DC_Central
+652,652,East,VA,Neighborhood Market,136,Suburban,D,Low,1,20411,DC_South
+653,653,Midwest,NE,Supercenter,106,Rural,E,Mid,1,12517,DC_Central
+654,654,Midwest,OH,Supercenter,126,Urban,C,Mid,1,23422,DC_South
+655,655,West,AZ,Supercenter,104,Suburban,B,Low,1,17700,DC_East
+656,656,South,GA,Supercenter,139,Urban,D,Mid,1,13693,DC_North
+657,657,South,LA,Supercenter,139,Rural,A,High,1,8767,DC_North
+658,658,South,FL,Neighborhood Market,150,Suburban,B,High,0,22818,DC_West
+659,659,East,MD,Neighborhood Market,135,Urban,A,Low,0,9549,DC_Central
+660,660,Midwest,MO,Supercenter,101,Rural,B,Mid,1,17956,DC_Central
+661,661,Midwest,IL,Neighborhood Market,124,Urban,B,Mid,1,14140,DC_Central
+662,662,South,OK,Supercenter,136,Urban,E,High,1,18837,DC_East
+663,663,South,TN,Supercenter,106,Urban,D,High,1,11716,DC_Central
+664,664,South,FL,Supercenter,141,Rural,D,High,1,12481,DC_North
+665,665,South,AR,Supercenter,146,Rural,B,Mid,1,14548,DC_East
+666,666,Midwest,OH,Neighborhood Market,144,Urban,C,Mid,1,12837,DC_South
+667,667,South,TN,Neighborhood Market,131,Suburban,C,Mid,1,15758,DC_Central
+668,668,South,GA,Supercenter,120,Suburban,A,Mid,1,18900,DC_Central
+669,669,West,WA,Supercenter,124,Rural,A,Low,1,15993,DC_South
+670,670,South,AR,Supercenter,125,Rural,E,Mid,1,13542,DC_Central
+671,671,Midwest,KS,Supercenter,136,Rural,B,Mid,1,22828,DC_South
+672,672,East,VA,Discount Store,121,Rural,A,Low,0,24052,DC_East
+673,673,South,MS,Supercenter,130,Rural,A,Mid,1,10385,DC_North
+674,674,Midwest,IN,Supercenter,124,Suburban,B,Mid,1,22308,DC_South
+675,675,East,DE,Supercenter,144,Rural,E,Low,1,8671,DC_West
+676,676,West,CO,Supercenter,142,Urban,A,Low,1,8163,DC_South
+677,677,South,FL,Neighborhood Market,130,Urban,E,High,1,16656,DC_Central
+678,678,West,AZ,Supercenter,122,Suburban,D,Low,1,19234,DC_East
+679,679,South,OK,Neighborhood Market,128,Urban,E,Mid,1,12795,DC_East
+680,680,South,AL,Supercenter,107,Suburban,C,Mid,1,18634,DC_South
+681,681,South,SC,Discount Store,135,Suburban,C,Mid,0,12798,DC_North
+682,682,Mountain,ND,Supercenter,128,Urban,E,Low,1,18749,DC_West
+683,683,South,AL,Supercenter,114,Rural,C,Mid,1,13827,DC_East
+684,684,South,AL,Discount Store,110,Urban,D,Mid,0,12719,DC_Central
+685,685,Midwest,KS,Supercenter,116,Urban,B,Mid,1,8593,DC_Central
+686,686,South,GA,Discount Store,116,Suburban,C,High,0,15394,DC_North
+687,687,South,TX,Supercenter,131,Urban,C,High,1,22056,DC_East
+688,688,South,AL,Supercenter,142,Suburban,E,High,1,18636,DC_South
+689,689,South,AR,Supercenter,125,Rural,D,High,1,8016,DC_Central
+690,690,South,OK,Supercenter,113,Rural,B,High,1,11191,DC_North
+691,691,South,TX,Supercenter,106,Rural,E,High,1,8392,DC_East
+692,692,Midwest,MI,Supercenter,144,Urban,E,Mid,1,14272,DC_East
+693,693,South,LA,Supercenter,109,Suburban,D,High,1,24955,DC_East
+694,694,South,FL,Supercenter,145,Rural,B,Mid,1,11631,DC_East
+695,695,West,CO,Supercenter,136,Suburban,D,Low,1,14172,DC_East
+696,696,South,SC,Neighborhood Market,143,Suburban,B,Mid,0,17312,DC_Central
+697,697,Midwest,IL,Discount Store,120,Rural,D,Mid,0,16906,DC_North
+698,698,South,MS,Discount Store,118,Rural,E,High,0,24462,DC_East
+699,699,South,TN,Supercenter,143,Suburban,E,High,1,16080,DC_West
+700,700,South,GA,Supercenter,121,Rural,A,High,1,15099,DC_West

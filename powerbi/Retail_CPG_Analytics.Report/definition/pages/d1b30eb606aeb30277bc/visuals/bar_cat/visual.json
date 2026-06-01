@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "bar_cat",
+  "position": {
+    "x": 30,
+    "y": 270,
+    "z": 5,
+    "height": 260,
+    "width": 580,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "lineClusteredColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Category"
+                    }
+                  },
+                  "Property": "category_name"
+                }
+              },
+              "queryRef": "Dim_Category.category_name",
+              "nativeQueryRef": "category_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "Sales TY"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.Sales TY",
+              "nativeQueryRef": "Sales TY"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_WeeklySales"
+                    }
+                  },
+                  "Property": "YoY Dollar"
+                }
+              },
+              "queryRef": "Fact_WeeklySales.YoY Dollar",
+              "nativeQueryRef": "YoY Dollar"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fe_c_fine",
+  "position": {
+    "x": 30,
+    "y": 110,
+    "z": 15,
+    "height": 95,
+    "width": 285,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "OTIF Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.OTIF Fine Exposure $",
+              "nativeQueryRef": "OTIF Fine Exposure $"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fine Exposure $'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5_wm_tbl_carrier",
+  "position": {
+    "x": 29.577114427860696,
+    "y": 110.14925373134328,
+    "z": 13,
+    "height": 291.69154228855723,
+    "width": 790.42288557213931,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "carrier_scac"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.carrier_scac",
+              "nativeQueryRef": "carrier_scac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "carrier_name"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.carrier_name",
+              "nativeQueryRef": "carrier_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Freight Type"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Freight Type",
+              "nativeQueryRef": "Freight Type"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Carrier On-Time Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Carrier On-Time Rate",
+              "nativeQueryRef": "Carrier On-Time Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Carrier OTIF Rate"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Carrier OTIF Rate",
+              "nativeQueryRef": "Carrier OTIF Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "OTIF Fine Exposure $"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.OTIF Fine Exposure $",
+              "nativeQueryRef": "OTIF Fine Exposure $"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Carrier OTIF Performance'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "025449176e7d8ca8c6ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "carrier_scac"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f5b9ea41d4a4cabf252a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "carrier_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2d5c454614f7e4a2b375",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Freight Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "24e52fcd89cd0a2aeb6a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Carrier On-Time Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4604f50143ff31ed4678",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Carrier OTIF Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c2212b02eff96282eef8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "OTIF Fine Exposure $"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

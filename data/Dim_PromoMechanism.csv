@@ -1,0 +1,6 @@
+promo_mechanism_id,promo_type,promo_description,avg_lift_pct
+1,TPR,Temporary Price Reduction,0.15
+2,BOGO,Buy One Get One,0.3
+3,Feature,Weekly Ad Feature,0.25
+4,Display,In-Store Display,0.12
+0,None,No Promotion,0.0

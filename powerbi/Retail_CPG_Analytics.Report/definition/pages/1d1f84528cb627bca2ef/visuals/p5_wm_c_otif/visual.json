@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5_wm_c_otif",
+  "position": {
+    "x": 438,
+    "y": 110,
+    "z": 6,
+    "height": 95,
+    "width": 190,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "OTIF Rate (Walmart Standard)"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.OTIF Rate (Walmart Standard)",
+              "nativeQueryRef": "OTIF Rate (Walmart Standard)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OTIF Rate (WM)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d6815e2a5d323a885e05",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "OTIF Rate (Walmart Standard)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

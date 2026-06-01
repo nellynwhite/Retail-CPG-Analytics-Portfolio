@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "fe_c_avg_fine",
+  "position": {
+    "x": 630,
+    "y": 110,
+    "z": 17,
+    "height": 95,
+    "width": 285,
+    "tabOrder": 17
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Avg Fine Per Non-Compliant PO"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Avg Fine Per Non-Compliant PO",
+              "nativeQueryRef": "Avg Fine Per Non-Compliant PO"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Fine per Non-Compliant PO'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "cf_bar_mabd",
+  "position": {
+    "x": 30,
+    "y": 500,
+    "z": 16,
+    "height": 290,
+    "width": 790,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "carrier_scac"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.carrier_scac",
+              "nativeQueryRef": "carrier_scac",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Avg Days vs MABD"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Avg Days vs MABD",
+              "nativeQueryRef": "Avg Days vs MABD"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Days vs MABD by Carrier'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dca6b1666e4eb940ee55",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "carrier_scac"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4081979fa4099d1f2f6a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_SupplyChain"
+              }
+            },
+            "Property": "Avg Days vs MABD"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

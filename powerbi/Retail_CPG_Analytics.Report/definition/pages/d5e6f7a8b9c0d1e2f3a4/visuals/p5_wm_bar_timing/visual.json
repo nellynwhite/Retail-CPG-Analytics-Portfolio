@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_wm_bar_timing",
+  "position": {
+    "x": 835,
+    "y": 110,
+    "z": 14,
+    "height": 375,
+    "width": 415,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "hundredPercentStackedBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Supplier"
+                    }
+                  },
+                  "Property": "supplier_name"
+                }
+              },
+              "queryRef": "Dim_Supplier.supplier_name",
+              "nativeQueryRef": "supplier_name",
+              "active": true
+            }
+          ]
+        },
+        "Legend": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Freight Type"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Freight Type",
+              "nativeQueryRef": "Freight Type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Pct Delivered Early"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Pct Delivered Early",
+              "nativeQueryRef": "Pct Delivered Early"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Pct Delivered On MABD"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Pct Delivered On MABD",
+              "nativeQueryRef": "Pct Delivered On MABD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_SupplyChain"
+                    }
+                  },
+                  "Property": "Pct Delivered Late"
+                }
+              },
+              "queryRef": "Fact_SupplyChain.Pct Delivered Late",
+              "nativeQueryRef": "Pct Delivered Late"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Delivery Timing vs MABD'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

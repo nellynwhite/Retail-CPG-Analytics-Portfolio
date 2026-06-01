@@ -1,0 +1,11 @@
+item_id,item_description,category_id,fineline_id,supplier_id,base_price,case_pack,avg_weekly_velocity
+1001,Ultra Clean Detergent,1,4120,201,12.97,4,180
+1002,Fresh Breeze Softener,1,4121,201,6.97,6,120
+1003,Premium Shampoo,2,3110,203,8.97,6,90
+1004,Hydrating Conditioner,2,3111,203,7.97,6,70
+1005,Kids Bubble Bath,2,3112,203,5.97,6,50
+1006,Energy Drink 12pk,3,5210,202,14.97,12,200
+1007,Sparkling Water 8pk,3,5211,202,6.97,8,150
+1008,Protein Bar Variety Pack,4,6110,204,9.97,10,110
+1009,Granola Clusters,4,6111,204,5.97,8,85
+1010,Dog Treats Chewy Bites,5,7110,205,8.97,10,95

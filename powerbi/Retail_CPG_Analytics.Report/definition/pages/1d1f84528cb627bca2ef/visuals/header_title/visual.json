@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "header_title",
+  "position": {
+    "x": 16.318407960199004,
+    "y": 6.1194029850746272,
+    "z": 19,
+    "height": 12.238805970149254,
+    "width": 13.258706467661693,
+    "tabOrder": 19
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Supply Chain — OTIF Performance & Scorecard",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "18px",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
