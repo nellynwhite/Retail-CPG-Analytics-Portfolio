@@ -22,7 +22,7 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 
 ---
 
-## Dashboard — 7 Pages
+## [Dashboard](https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/c8d4e3f2a1b9c7d0e5f6?experience=power-bi) — 7 Pages
 
 | Page | Title | Primary KPIs |
 |---|---|---|
