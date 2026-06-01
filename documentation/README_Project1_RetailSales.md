@@ -88,10 +88,3 @@ SELECT * FROM vw_Rolling4WkSales;     -- 4-week moving average by item
 
 ---
 
-## Recruiter Talking Points
-
-- Reproduced Walmart Scintilla vendor portal with real category hierarchy: Beverages leads at $11.55M and 8.0% YoY; Pet trails at 4.0%
-- Energy Drink 12pk at $8.66M is the single largest item — 26.9% of total portfolio — making its in-stock rate the highest-priority replenishment concern
-- Granola Clusters at +0.2% YoY is essentially flat — flagged as a potential range rationalization or promotional investment candidate
-- Built Walmart fiscal calendar DAX patterns from scratch — DATESYTD and SAMEPERIODLASTYEAR are incompatible with the 52-week structure; all accumulators use FILTER/ALL patterns
-- Resolved non-unique week_id data model issue with date_key composite column in Power Query
