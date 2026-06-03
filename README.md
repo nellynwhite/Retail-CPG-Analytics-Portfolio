@@ -44,15 +44,15 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 
 ---
 
-## Projects
+## Deliverables
 
-| # | Project | Dashboard Pages | Key Skills |
+| # | Executive One Pager Deck | 
 |---|---|---|---|
-| 1 | [README](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer1_README.html)| Pages 1–2 | SQL, Power BI, DAX |
-| 2 | [Executive Summary](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer2_executive_briefing.html)| Page 3 | SQL window functions, Power BI |
-| 3 | [Technical Reference](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer3_technical_reference.html) | Page 4 | SQL aggregations, Power BI |
-| 4 | [CPG Domain]([./project4_supply_chain/README.md](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer4_cpg_domain.html)) | Pages 5–7 | SQL, Power BI, OTIF logic |
-| 5 | [Process Judgment]([./project5_pipeline/README.md](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer5_process_judgment.html)) | All pages | SQL views, Power BI star schema |
+| 1 | [README](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer1_README.html)
+| 2 | [Executive Summary](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer2_executive_briefing.html)
+| 3 | [Technical Reference](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer3_technical_reference.html) 
+| 4 | [CPG Domain]([./project4_supply_chain/README.md](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer4_cpg_domain.html) 
+| 5 | [Process Judgment]([./project5_pipeline/README.md](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer5_process_judgment.html) 
 
 ---
 
