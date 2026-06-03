@@ -44,7 +44,7 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 
 ---
 
-## Deliverables
+## So Whats
 
 | Page | Executive Deck | 
 |---|---|
@@ -62,8 +62,6 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 - **Storage** — CSV → MySQL (MySQL Workbench)
 - **Analytics** — SQL (views, window functions, CTEs)
 - **Visualization** — Power BI Desktop (DAX measures, star schema, 7-page dashboard)
-- **Model Access** — Claude Desktop + powerbi-modeling-mcp
-- **Version Control** — Git / GitHub
 
 ---
 
