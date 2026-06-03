@@ -2,7 +2,7 @@
 
 **Nelly — CPG / Retail Analytics | SQL · Power BI · DAX**
 
-Seven-page Power BI dashboard built on a synthetic Walmart Scintilla-style database — covering sales drivers, inventory health, promo analytics, and a three-page supply chain module with OTIF, fine exposure, and carrier-level analysis.
+Seven page Power BI dashboard built on a synthetic Walmart Scintilla style database — covering sales drivers, inventory health, promo analytics, and a three page supply chain module with OTIF, fine exposure, and carrier level analysis.
 
 ---
 
