@@ -48,8 +48,8 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 
 | Page | Deliverable Decks | 
 |---|---|
-| 1 | [Executive Summary](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer1_README.html) |
-| 2 | [Sales Performance](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer2_executive_briefing.html) |
+| 1 | [Portfolio Scope](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer1_README.html) |
+| 2 | [Executive Summary](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer2_executive_briefing.html) |
 | 3 | [Technical Reference](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer3_technical_reference.html) | 
 | 4 | [CPG Domain](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer4_cpg_domain.html) |
 | 5 | [Process Judgment](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer5_process_judgment.html) |
