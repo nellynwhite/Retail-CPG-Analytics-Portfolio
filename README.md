@@ -46,7 +46,8 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 
 ## So Whats
 
-| Page | Executive Deck | 
+| Page | Deliverable Decks
+| 
 |---|---|
 | 1 | [Executive Summary](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer1_README.html) |
 | 2 | [Sales Performance](https://nellynwhite.github.io/Retail-CPG-Analytics-Portfolio/portfolio-pages/layer2_executive_briefing.html) |
