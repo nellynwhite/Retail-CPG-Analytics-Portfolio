@@ -55,15 +55,6 @@ Promo Events TY = CALCULATE(COUNTROWS(Fact_PromoCalendar), Fact_PromoCalendar[is
 
 ---
 
-## Recruiter Talking Points
-
-- Display delivers 35–40x higher ROI than TPR for the same items — a concrete, data-backed trade spend reallocation recommendation
-- BOGO generates 30% lift with zero recorded trade cost — if supplier-funded, it is the highest-value mechanism in the portfolio
-- Built item × mechanic cross-tab showing ROI variance across four promo types — the format used in Walmart JBP trade spend discussions
-- Total Trade Spend and Incremental Units by supplier visual enables side-by-side supplier contribution comparison
-
----
----
 
 # Project 4 — Supply Chain: OTIF, Fine Exposure & Carrier Analysis
 
@@ -148,15 +139,7 @@ Forecast MAPE (ML) = AVERAGE(Fact_SupplyChain[forecast_mape_ml])
 
 ---
 
-## Recruiter Talking Points
 
-- Built a three-page supply chain module that mirrors Walmart's One Touch portal — OTIF by supplier, fine exposure by root cause, and carrier scorecard by SCAC code
-- Modeled MABD (Must Arrive By Date) tracking and separated On-Time from In-Full as distinct failure modes — the standard Walmart compliance framework
-- Isolated Walmart Fault Rate (6.9%) from supplier fault — a critical distinction for OTIF dispute filing
-- PO edit reason code analysis (43/47/51) identifies root causes that map directly to corrective action plans used in real vendor compliance conversations
-- Carrier-level SCAC scoring with Collect vs Prepaid split demonstrates understanding of freight responsibility — who owns the late delivery matters for OTIF dispute credit
-
----
 ---
 
 # Project 5 — SQL to Power BI Pipeline
@@ -207,9 +190,3 @@ data.py    + constraints    _views.sql      date_key fix               6 display
 
 ---
 
-## Recruiter Talking Points
-
-- Designed complete end-to-end pipeline from CSV generation through a 7-page Power BI dashboard with 77 DAX measures
-- Identified and resolved 5 real data modeling problems including non-unique keys, incompatible time intelligence, and MySQL connector authentication failures
-- Built SQL semantic layer (views) that decouples Power BI from raw table structure — the same pattern used in enterprise BI environments
-- Supply chain module (Pages 5–7) demonstrates familiarity with Walmart's OTIF compliance framework including MABD, freight type, SCAC codes, and PO edit reason codes
