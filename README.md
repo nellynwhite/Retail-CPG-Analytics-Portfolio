@@ -1,6 +1,6 @@
 # Retail CPG Analytics Portfolio
 
-**Nelly — CPG / Retail Analytics | SQL · Power BI · DAX**
+**Nelly White — CPG / Retail Analytics | SQL · Power BI · DAX**
 
 Seven page Power BI dashboard built on a synthetic Walmart Scintilla style database — covering sales drivers, inventory health, promo analytics, and a three page supply chain module with OTIF, fine exposure, and carrier level analysis.
 
@@ -61,7 +61,7 @@ Star schema · 4 fact tables · 7 dimension tables · 77 DAX measures · 6 displ
 - **Data Generation** — Python (pandas, numpy)
 - **Storage** — CSV → MySQL (MySQL Workbench)
 - **Analytics** — SQL (views, window functions, CTEs)
-- **Visualization** — Power BI Desktop (DAX measures, star schema, 7-page dashboard)
+- **Visualization** — Power BI Desktop (DAX measures, star schema, 7 page dashboard)
 
 ---
 
