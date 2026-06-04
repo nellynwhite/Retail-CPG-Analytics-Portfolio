@@ -71,10 +71,10 @@ SELECT * FROM vw_InStockRate;      -- Category × Quarter summary
 
 ---
 
-## Recruiter Talking Points
+## Insights/ Call Outs
 
-- Chain-wide in-stock rate of 88.9% is materially below the 95% Walmart vendor benchmark — quantified at $4.14M in lost sales
-- Energy Drink 12pk has the worst per-store lost sales at $19,506; extrapolated across 500 stores this represents ~$9.75M annual exposure on a single item
-- Every store-item in the sample shows WOS vs Target of -0.6 to -0.7, confirming this is structural across the chain, not isolated to specific stores
-- Kids Bubble Bath is the only item above 95% in-stock (96.2%) with WOS of 1.5 — its replenishment model can serve as an internal benchmark
-- Built stockout trend visual connecting weekly lost sales dollars to stockout event counts — the same format used in Walmart vendor business reviews
+- Chain wide in-stock rate of 88.9% is materially below the 95% Walmart vendor benchmark, quantified at $4.14M in lost sales
+- Energy Drink 12pk has the worst per store lost sales at $19,506; extrapolated across 500 stores this represents ~$9.75M annual exposure on a single item
+- Every item in the sample shows WOS vs Target of -0.6 to -0.7, confirming this is structural across the chain, not isolated to specific stores
+- Kids Bubble Bath is the only item above 95% in-stock (96.2%) with WOS of 1.5, its replenishment model can serve as an internal benchmark
+- Built stockout trend visual connecting weekly lost sales dollars to stockout event counts, the same format used in Walmart vendor business reviews
