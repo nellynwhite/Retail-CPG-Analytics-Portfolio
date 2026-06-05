@@ -1,167 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Retail & CPG Analytics Portfolio | Nelly</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelly White Analytics Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f7f9fc;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 60px 20px;
+    }
 
-        header {
-            background: #1e3a8a;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
 
-        header p {
-            font-size: 20px;
-            opacity: 0.9;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+    .tile {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        h2 {
-            margin-top: 50px;
-            color: #1e3a8a;
-        }
+    .tile:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
 
-        .tiles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+    .tile img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
 
-        .tile {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: 0.2s;
-        }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(30, 58, 138, 0.85);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 1.3em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-        .tile:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+    .tile:hover .overlay {
+      opacity: 1;
+    }
 
-        .tile a {
-            text-decoration: none;
-            color: #1e3a8a;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .insights {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-            margin-top: 20px;
-        }
-
-        .button-row {
-            margin-top: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #1e3a8a;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-right: 12px;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            background: #162f6b;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            background: #f1f5f9;
-            color: #555;
-        }
-    </style>
+    footer {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <h1>Explore the Analytics Portfolio</h1>
+    <p>Select a section to dive into the analytics</p>
+  </header>
 
-<header>
-    <h1>Retail & CPG Analytics Portfolio</h1>
-    <p>Walmart Scintilla‑Style Dashboard · Power BI · SQL · DAX</p>
-</header>
+  <section class="hero-grid">
+    <a href="sales-overview/index.html" class="tile">
+      <img src="images/sales-overview.png" alt="Sales Overview" />
+      <div class="overlay">View Deliverables</div>
+    </a>
+    <a href="inventory-health/index.html" class="tile">
+      <img src="images/inventory-health.png" alt="Inventory Health" />
+      <div class="overlay">View Deliverables</div>
+    </a>
+    <a href="promo-analytics/index.html" class="tile">
+      <img src="images/promo-analytics.png" alt="Promo Analytics" />
+      <div class="overlay">View Deliverables</div>
+    </a>
+    <a href="otif-scorecard/index.html" class="tile">
+      <img src="images/otif-scorecard.png" alt="OTIF Scorecard" />
+      <div class="overlay">View Deliverables</div>
+    </a>
+    <a href="fine-exposure/index.html" class="tile">
+      <img src="images/fine-exposure.png" alt="Fine Exposure" />
+      <div class="overlay">View Deliverables</div>
+    </a>
+    <a href="carrier-performance/index.html" class="tile">
+      <img src="images/carrier-performance.png" alt="Carrier Performance" />
+      <div class="overlay">View Deliverables</div>
+    </a>
+  </section>
 
-<div class="container">
-
-    <h2>Explore the Dashboard</h2>
-    <p>Select a section to dive into the analytics.</p>
-
-    <div class="tiles">
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/d1b30eb606aeb30277bc?experience=power-bi">Sales Overview</a></div>
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/7f732a679f4651d1f6eb?experience=power-bi">Weekly Performance</a></div>
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/7fd5dbe6336cce29b8c3?experience=power-bi">Inventory Health</a></div>
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/25b10431042857863a8c?experience=power-bi">Promo Analytics</a></div>
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/1d1f84528cb627bca2ef?experience=power-bi">OTIF Scorecard</a></div>
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/c8d4e3f2a1b9c7d0e5f6?experience=power-bi">Fine Exposure</a></div>
-        <div class="tile"><a href="https://app.powerbi.com/groups/me/reports/43bc8265-5183-4ae5-917a-8cce6a2dce75/d5e6f7a8b9c0d1e2f3a4?experience=power-bi">Carrier Performance</a></div>
-    </div>
-
-    <h2>Top Insights (SO WHATs That Matter)</h2>
-    <div class="insights">
-        <ul>
-            <li><strong>Beverages + Home Care deliver 63% of total sales</strong> and $1.42M of YoY growth — protect these categories from stockouts.</li>
-            <li><strong>88.9% in‑stock rate</strong> is the biggest revenue leak — Energy Drink 12pk alone represents ~$9.75M annualized lost sales.</li>
-            <li><strong>TPR is the lowest‑ROI promo mechanic</strong> (1.24x) — shifting 20% of TPR budget to Display increases ROI 35–40x.</li>
-            <li><strong>OTIF failures are driven by In‑Full (59.8%), not On‑Time (90.3%)</strong> — the issue is product availability, not carriers.</li>
-            <li><strong>Root cause 47 (Incorrect Labeling) is fully preventable</strong> — eliminating it saves ~$75K annually in fines.</li>
-            <li><strong>Schneider & Central Transport underperform</strong> — both require a 90‑day performance improvement plan.</li>
-        </ul>
-    </div>
-
-    <div class="button-row">
-        <a class="btn" href="portfolio-pages/layer2_executive_briefing.html">View Executive Briefing</a>
-        <a class="btn" href="README.html">View README</a>
-        <a class="btn" href="https://github.com/nellynwhite/Retail-CPG-Analytics-Portfolio">View GitHub Repo</a>
-    </div>
-
-    <h2>About Me</h2>
-    <p>
-        Hi — I’m <strong>Nelly</strong>, a Retail & CPG Analyst specializing in POS trend analysis, 
-        inventory & replenishment analytics, promo ROI modeling, OTIF performance, and data storytelling 
-        using Power BI, SQL, and DAX.  
-        This portfolio reflects how I approach real‑world retail problems and translate them into 
-        actionable insights.
-    </p>
-
-</div>
-
-<footer>
-    © 2026 Nelly · Retail & CPG Analytics Portfolio
-</footer>
-
+  <footer>
+    © 2026 Nelly White Analytics Portfolio
+  </footer>
 </body>
 </html>
