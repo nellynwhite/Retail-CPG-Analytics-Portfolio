@@ -1,128 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nelly White Analytics Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f5f7fa;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nelly White — Retail &amp; CPG Analyst</title>
+<meta name="description" content="Retail &amp; CPG analytics portfolio — Walmart / Sam's Club vendor analytics across POS, supply chain, and trade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --ink:#1f2937; --muted:#6b7280; --hint:#9aa3af;
+    --line:#e9ebef; --line-2:#d7dbe2; --accent:#185FA5; --bg:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Manrope',system-ui,-apple-system,Segoe UI,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:0 28px}
 
-    header {
-      background-color: #1e3a8a;
-      color: white;
-      padding: 60px 20px;
-    }
+  /* nav */
+  nav{display:flex; align-items:center; justify-content:space-between; padding:26px 0 0}
+  .nm{font-size:15px; font-weight:600; color:var(--ink); letter-spacing:-.2px}
+  .links a{font-size:13.5px; color:var(--muted); text-decoration:none; margin-left:20px; transition:color .15s}
+  .links a:hover{color:var(--accent)}
+  .links i{font-size:18px; vertical-align:-3px}
 
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
+  /* hero */
+  header{padding:58px 0 6px}
+  h1{font-family:'Sora',sans-serif; font-size:32px; font-weight:600; letter-spacing:-.5px; margin:0 0 8px; color:var(--ink)}
+  .lede{font-size:15px; color:var(--muted); margin:0 0 18px; max-width:560px}
+  .chip{display:inline-block; font-size:12.5px; padding:4px 12px; border-radius:7px;
+        background:#f3f4f6; color:#4b5563; margin:0 7px 7px 0}
 
-    header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
+  /* section label */
+  .lbl{font-family:'Sora',sans-serif; font-size:12px; letter-spacing:1.4px; text-transform:uppercase;
+       color:var(--hint); font-weight:600; margin:54px 0 18px}
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  /* tiles */
+  .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  .tile{display:block; line-height:0; transition:transform .18s ease}
+  .tile img{width:100%; height:auto; display:block;
+            filter:drop-shadow(0 8px 18px rgba(15,37,69,.16));
+            transition:filter .18s ease}
+  .tile:hover{transform:translateY(-5px)}
+  .tile:hover img{filter:drop-shadow(0 16px 30px rgba(15,37,69,.26))}
 
-    .tile {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  /* docs */
+  .docs{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .doc{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;
+       border:1px solid var(--line); border-radius:var(--radius); padding:16px 16px;
+       transition:border-color .15s ease, transform .15s ease, background .15s ease}
+  .doc:hover{border-color:var(--line-2); transform:translateY(-2px); background:#fcfcfd}
+  .doc .di{font-size:22px; color:var(--accent); flex:none}
+  .doc .dt{font-size:14px; font-weight:600; color:var(--ink)}
+  .doc .dd{font-size:12px; color:var(--muted); margin-top:1px}
+  .doc .go{margin-left:auto; font-size:16px; color:var(--hint)}
 
-    .tile:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
+  /* footer */
+  footer{margin:64px 0 40px; padding-top:22px; border-top:1px solid var(--line);
+         font-size:12.5px; color:var(--hint); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px}
+  footer a{color:var(--muted); text-decoration:none}
+  footer a:hover{color:var(--accent)}
 
-    .tile img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: opacity 0.3s ease;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(30, 58, 138, 0.85);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      font-size: 1.3em;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .tile:hover .overlay {
-      opacity: 1;
-    }
-
-    footer {
-      background-color: #1e3a8a;
-      color: white;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-  </style>
+  @media (max-width:820px){
+    .tiles{grid-template-columns:repeat(2,1fr)}
+    .docs{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 18px}
+    .tiles,.docs{grid-template-columns:1fr}
+    h1{font-size:27px}
+    .links a:not(.ico){display:none}
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
+
+  <nav>
+    <span class="nm">Nelly White</span>
+    <span class="links">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#documentation">Documentation</a>
+      <!-- EDIT: point this to your resume file in /assets -->
+      <a href="assets/Nelly_White_Resume.pdf">Résumé</a>
+      <!-- EDIT: your LinkedIn URL -->
+      <a class="ico" href="https://www.linkedin.com/in/your-handle" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a class="ico" href="https://github.com/nellynwhite/Retail-CPG-Analytics-Portfolio" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+    </span>
+  </nav>
+
   <header>
-    <h1>Explore the Analytics Portfolio</h1>
-    <p>Select a section to dive into the analytics</p>
+    <h1>Retail &amp; CPG Analyst</h1>
+    <p class="lede">Walmart / Sam&#39;s Club vendor analytics — POS, supply chain, and trade.</p>
+    <div>
+      <span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">DAX</span>
+    </div>
   </header>
 
-  <section class="hero-grid">
-    <a href="sales-overview/index.html" class="tile">
-      <img src="images/sales-overview.png" alt="Sales Overview" />
-      <div class="overlay">View Deliverables</div>
-    </a>
-    <a href="inventory-health/index.html" class="tile">
-      <img src="images/inventory-health.png" alt="Inventory Health" />
-      <div class="overlay">View Deliverables</div>
-    </a>
-    <a href="promo-analytics/index.html" class="tile">
-      <img src="images/promo-analytics.png" alt="Promo Analytics" />
-      <div class="overlay">View Deliverables</div>
-    </a>
-    <a href="otif-scorecard/index.html" class="tile">
-      <img src="images/otif-scorecard.png" alt="OTIF Scorecard" />
-      <div class="overlay">View Deliverables</div>
-    </a>
-    <a href="fine-exposure/index.html" class="tile">
-      <img src="images/fine-exposure.png" alt="Fine Exposure" />
-      <div class="overlay">View Deliverables</div>
-    </a>
-    <a href="carrier-performance/index.html" class="tile">
-      <img src="images/carrier-performance.png" alt="Carrier Performance" />
-      <div class="overlay">View Deliverables</div>
-    </a>
+  <section id="portfolio">
+    <div class="lbl">Explore the portfolio</div>
+    <div class="tiles">
+      <a class="tile" href="assets/Organized_Portfolio/1_Sales_Overview/OnePager_Sales_Overview.docx">
+        <img src="assets/tiles/tile_sales_performance.png" alt="Sales Performance — $32.23M Net Sales (TY)" loading="lazy"></a>
+      <a class="tile" href="assets/Organized_Portfolio/3_Inventory_Health/OnePager_Inventory_Health.docx">
+        <img src="assets/tiles/tile_inventory_health.png" alt="Inventory Health — 88.9% In-Stock Rate" loading="lazy"></a>
+      <a class="tile" href="assets/Organized_Portfolio/4_Promo_Analytics/OnePager_Promo_Analytics.docx">
+        <img src="assets/tiles/tile_promo_analytics.png" alt="Promo Analytics — +19.9% Avg Promo Lift" loading="lazy"></a>
+      <a class="tile" href="assets/Organized_Portfolio/5_Supply_Chain_OTIF/OnePager_OTIF_Supplier_Scorecard.docx">
+        <img src="assets/tiles/tile_otif_scorecard.png" alt="OTIF Scorecard — 54.2% OTIF Rate" loading="lazy"></a>
+      <a class="tile" href="assets/Organized_Portfolio/6_Supply_Chain_Fine_Exposure/OnePager_Fine_Exposure_Root_Cause.docx">
+        <img src="assets/tiles/tile_fine_exposure.png" alt="Fine Exposure — $304K OTIF Penalty Risk" loading="lazy"></a>
+      <a class="tile" href="assets/Organized_Portfolio/7_Supply_Chain_Carrier_Freight/OnePager_Carrier_Freight.docx">
+        <img src="assets/tiles/tile_carrier_freight.png" alt="Carrier Freight — 90.8% Carrier On-Time" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section id="documentation">
+    <div class="lbl">Documentation</div>
+    <div class="docs">
+      <a class="doc" href="assets/Organized_Portfolio/00_Portfolio_Reference/HTML_Portfolio_Layers/layer2_executive_briefing.html">
+        <i class="ti ti-presentation-analytics di"></i>
+        <span><span class="dt">Executive briefing</span><br><span class="dd">The story in two minutes</span></span>
+        <i class="ti ti-arrow-right go"></i></a>
+      <a class="doc" href="assets/Organized_Portfolio/00_Portfolio_Reference/HTML_Portfolio_Layers/layer3_technical_reference.html">
+        <i class="ti ti-code di"></i>
+        <span><span class="dt">Technical reference</span><br><span class="dd">Schema · 77 DAX measures</span></span>
+        <i class="ti ti-arrow-right go"></i></a>
+      <a class="doc" href="assets/Organized_Portfolio/00_Portfolio_Reference/HTML_Portfolio_Layers/layer4_cpg_domain.html">
+        <i class="ti ti-building-store di"></i>
+        <span><span class="dt">CPG domain reference</span><br><span class="dd">OTIF · trade · replenishment</span></span>
+        <i class="ti ti-arrow-right go"></i></a>
+      <a class="doc" href="assets/Organized_Portfolio/00_Portfolio_Reference/HTML_Portfolio_Layers/layer5_process_judgment.html">
+        <i class="ti ti-bulb di"></i>
+        <span><span class="dt">Process &amp; judgment</span><br><span class="dd">How &amp; why it was built</span></span>
+        <i class="ti ti-arrow-right go"></i></a>
+      <a class="doc" href="assets/Organized_Portfolio/00_Portfolio_Reference/_Originals_Full/Portfolio_OnePagers_AllPages_FULL.docx">
+        <i class="ti ti-files di"></i>
+        <span><span class="dt">One-pager series</span><br><span class="dd">Printable section summaries</span></span>
+        <i class="ti ti-arrow-right go"></i></a>
+      <a class="doc" href="assets/Organized_Portfolio/00_Portfolio_Reference/HTML_Portfolio_Layers/layer1_README.html">
+        <i class="ti ti-book-2 di"></i>
+        <span><span class="dt">Portfolio overview</span><br><span class="dd">Start here</span></span>
+        <i class="ti ti-arrow-right go"></i></a>
+    </div>
   </section>
 
   <footer>
-    © 2026 Nelly White Analytics Portfolio
+    <span>Built with Power BI · SQL · DAX</span>
+    <span>Bentonville, AR · <a href="https://github.com/nellynwhite/Retail-CPG-Analytics-Portfolio">GitHub</a></span>
   </footer>
+
+</div>
 </body>
 </html>
