@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Briefing — Retail CPG Analytics</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --navy: #0A1628;
+    --blue: #1B3A6B;
+    --accent: #0066CC;
+    --gold: #C8932A;
+    --light-blue: #E8F0FA;
+    --border: #CBD5E8;
+    --text: #1A2340;
+    --muted: #5A6A8A;
+    --white: #FFFFFF;
+    --green: #1A7A4A;
+    --green-light: #E6F4EE;
+    --red: #C23B22;
+    --red-light: #FDECEA;
+    --amber: #8C5A00;
+    --amber-light: #FFF4E5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: #F4F6FB; color: var(--text); font-size: 14px; line-height: 1.6; }
+  .page { max-width: 960px; margin: 0 auto; background: var(--white); }
+
+  /* COVER HEADER */
+  .cover {
+    background: var(--navy);
+    padding: 48px 48px 36px;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .cover-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .badge {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .cover-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .cover h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .cover-sub {
+    font-size: 14px;
+    color: #8AA4CC;
+    font-weight: 300;
+  }
+
+  .cover-context {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .cover-context p {
+    font-size: 13px;
+    color: #B8CADD;
+    line-height: 1.65;
+  }
+
+  /* CONTENT */
+  .content { padding: 40px 48px; }
+
+  .section { margin-bottom: 44px; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* INSIGHT CARD */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .insight-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .insight-header {
+    background: var(--navy);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .insight-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.03em;
+  }
+
+  .insight-kpi {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .kpi-up { color: #5ECFA0; }
+  .kpi-warn { color: #FFC355; }
+  .kpi-down { color: #FF7A6A; }
+
+  .insight-body { padding: 14px 16px; }
+
+  .finding {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .finding:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+  .finding-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+
+  .finding-text { font-size: 12.5px; color: var(--text); line-height: 1.5; }
+
+  .action-box {
+    background: #FFF8EC;
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .action-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 2px;
+  }
+
+  .action-text { font-size: 12px; color: var(--text); line-height: 1.45; }
+
+  /* CATEGORY SCORECARD */
+  .scorecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .scorecard-table thead th {
+    background: var(--navy);
+    color: #8AA4CC;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .scorecard-table thead th:not(:first-child) { text-align: right; }
+
+  .scorecard-table tbody tr { border-bottom: 1px solid var(--border); }
+  .scorecard-table tbody tr:hover { background: var(--light-blue); }
+
+  .scorecard-table td {
+    padding: 11px 14px;
+    vertical-align: middle;
+  }
+
+  .scorecard-table td:not(:first-child) {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+  }
+
+  .cat-name { font-weight: 600; color: var(--navy); }
+
+  .growth-bar-wrap { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+
+  .growth-bar {
+    height: 6px;
+    border-radius: 3px;
+    min-width: 4px;
+  }
+
+  .bar-positive { background: var(--green); }
+  .bar-negative { background: var(--red); }
+
+  .tag-green { color: var(--green); font-weight: 600; }
+  .tag-red { color: var(--red); font-weight: 600; }
+  .tag-amber { color: var(--amber); font-weight: 600; }
+
+  /* PROMO MECHANICS */
+  .mech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .mech-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .mech-header {
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .mech-tpr { background: #0A4F8C; }
+  .mech-bogo { background: #1A7A4A; }
+  .mech-feat { background: #7A4A00; }
+  .mech-disp { background: #5A1A6B; }
+
+  .mech-body { padding: 12px; }
+
+  .mech-stat {
+    margin-bottom: 8px;
+  }
+
+  .mech-stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .mech-stat-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .mech-note {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.4;
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+
+  /* RISK TABLE */
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .risk-table th {
+    background: var(--navy);
+    color: #8AA4CC;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .risk-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); font-size: 13px; }
+
+  .risk-sev {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .sev-high { background: var(--red-light); color: var(--red); border: 1px solid #F0B0A0; }
+  .sev-med { background: var(--amber-light); color: var(--amber); border: 1px solid #F0C980; }
+  .sev-low { background: var(--green-light); color: var(--green); border: 1px solid #9ECBB8; }
+
+  /* OTIF BLOCK */
+  .supplier-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  .supplier-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .sup-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+    min-height: 28px;
+  }
+
+  .sup-otif {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .sup-gap { font-size: 11px; font-weight: 500; }
+  .sup-target { font-size: 10px; color: var(--muted); }
+
+  /* RECOMMENDATIONS */
+  .reco-list { list-style: none; }
+
+  .reco-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .reco-item:last-child { border-bottom: none; }
+
+  .reco-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reco-content {}
+  .reco-title { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .reco-body { font-size: 12.5px; color: var(--text); line-height: 1.55; }
+  .reco-impact {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    background: var(--green-light);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 18px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-note { font-size: 11px; color: #4A6080; font-family: 'IBM Plex Mono', monospace; }
+  .footer-tag { font-size: 11px; color: var(--gold); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <div class="cover-meta">
+      <div>
+        <div class="cover-label">Executive Briefing · FY2024 Full Year</div>
+        <h1>Retail CPG Analytics<br>Performance Summary</h1>
+        <div class="cover-sub">Scintilla-Style Vendor Intelligence · 600 Stores · 5 Categories · 10 SKUs</div>
+      </div>
+      <div class="badge">Layer 2 · Business Acumen</div>
+    </div>
+    <div class="cover-context">
+      <p>This briefing translates a full year of Walmart Scintilla-style analytics into four actionable business areas: sales performance, inventory risk, promotional effectiveness, and supply chain reliability. Each section follows the standard CPG vendor review format — observation, implication, recommended action.</p>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- HEADLINE INSIGHTS -->
+    <div class="section">
+      <div class="section-label">Headline findings</div>
+      <div class="insight-grid">
+
+        <div class="insight-card">
+          <div class="insight-header">
+            <span class="insight-title">Sales Performance</span>
+            <span class="insight-kpi kpi-up">+6.8% YoY</span>
+          </div>
+          <div class="insight-body">
+            <div class="finding">
+              <div class="finding-label">What happened</div>
+              <div class="finding-text">Total sales reached $32.2M TY vs. $30.2M LY. Beverages led growth at +8.0% YoY on strong velocity in the Energy Drink and Sparkling Water SKUs. Pet grew slowest at +4.0%.</div>
+            </div>
+            <div class="finding">
+              <div class="finding-label">What it means</div>
+              <div class="finding-text">Growth is primarily volume-driven. Average selling prices held flat across the portfolio, meaning unit velocity improvements are the core driver — a healthy signal for shelf productivity.</div>
+            </div>
+            <div class="action-box">
+              <div class="action-label">Recommended action</div>
+              <div class="action-text">Prioritize ranging expansion in the Beverages category. Investigate whether Pet underperformance is a shelf placement issue or a velocity ceiling vs. category benchmarks.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-header">
+            <span class="insight-title">Inventory & In-Stock</span>
+            <span class="insight-kpi kpi-warn">88.9% In-Stock</span>
+          </div>
+          <div class="insight-body">
+            <div class="finding">
+              <div class="finding-label">What happened</div>
+              <div class="finding-text">The portfolio averaged 88.9% in-stock rate against a 95% target. An estimated $4.1M in sales was lost to stockouts across 419K units, with 1.4 average weeks of supply — below the 2.0 WOS threshold.</div>
+            </div>
+            <div class="finding">
+              <div class="finding-label">What it means</div>
+              <div class="finding-text">A 6-point gap vs. target is meaningful: every percentage point of in-stock improvement translates directly to recovered lost sales. At the current run rate, the portfolio is leaving ~12.8% of achievable revenue on the shelf.</div>
+            </div>
+            <div class="action-box">
+              <div class="action-label">Recommended action</div>
+              <div class="action-text">Focus replenishment review on the 10% of store/item pairs generating the highest lost sales concentration. Raise safety stock to 2.0 WOS minimum during promo weeks.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-header">
+            <span class="insight-title">Promotional Effectiveness</span>
+            <span class="insight-kpi kpi-up">19.5% avg lift</span>
+          </div>
+          <div class="insight-body">
+            <div class="finding">
+              <div class="finding-label">What happened</div>
+              <div class="finding-text">128 promo events ran across the portfolio TY with $496K in estimated trade spend. Average promo lift was 19.5% above baseline with 149K incremental units generated.</div>
+            </div>
+            <div class="finding">
+              <div class="finding-label">What it means</div>
+              <div class="finding-text">Promotions are driving incremental volume, but the 26.8% promo mix signals the portfolio may be dependent on promotional demand. Over-reliance on TPR can erode base velocity and train shoppers to wait for deals.</div>
+            </div>
+            <div class="action-box">
+              <div class="action-label">Recommended action</div>
+              <div class="action-text">Evaluate which SKUs show baseline velocity erosion in weeks following promo events. Shift trade investment toward Feature + Display combos where the additive lift justifies the spend.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-header">
+            <span class="insight-title">Supply Chain / OTIF</span>
+            <span class="insight-kpi kpi-down">91.3% vs 93.4% goal</span>
+          </div>
+          <div class="insight-body">
+            <div class="finding">
+              <div class="finding-label">What happened</div>
+              <div class="finding-text">OTIF averaged 91.3% against the 93.4% Walmart target. Peak Snacks (88.4%) and PetJoy (89.9%) are the most exposed, with the highest shortage unit totals at 68K and 26K respectively.</div>
+            </div>
+            <div class="finding">
+              <div class="finding-label">What it means</div>
+              <div class="finding-text">Falling below Walmart's OTIF threshold triggers financial penalties and can jeopardize vendor shelf positioning. A 2.1 percentage point gap vs. goal represents meaningful fine exposure for affected suppliers.</div>
+            </div>
+            <div class="action-box">
+              <div class="action-label">Recommended action</div>
+              <div class="action-text">Escalate Peak Snacks and PetJoy to a quarterly OTIF improvement review. Validate whether the ML forecast improvement (2.0% MAPE vs. 2.6% naive) reduces shortage exposure if adopted upstream.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORY SCORECARD -->
+    <div class="section">
+      <div class="section-label">Category performance scorecard</div>
+      <table class="scorecard-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Sales TY</th>
+            <th>Sales LY</th>
+            <th>$ Chg YoY</th>
+            <th>% Chg YoY</th>
+            <th>Growth trend</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cat-name">Beverages</td>
+            <td>$11.6M</td>
+            <td>$10.7M</td>
+            <td class="tag-green">+$858K</td>
+            <td class="tag-green">+8.0%</td>
+            <td><div class="growth-bar-wrap"><div class="growth-bar bar-positive" style="width:60px"></div><span class="tag-green">+8.0%</span></div></td>
+            <td><span class="risk-sev sev-low">Strong</span></td>
+          </tr>
+          <tr>
+            <td class="cat-name">Home Care</td>
+            <td>$8.9M</td>
+            <td>$8.4M</td>
+            <td class="tag-green">+$562K</td>
+            <td class="tag-green">+6.7%</td>
+            <td><div class="growth-bar-wrap"><div class="growth-bar bar-positive" style="width:50px"></div><span class="tag-green">+6.7%</span></div></td>
+            <td><span class="risk-sev sev-low">On track</span></td>
+          </tr>
+          <tr>
+            <td class="cat-name">Beauty & Personal Care</td>
+            <td>$4.7M</td>
+            <td>$4.4M</td>
+            <td class="tag-green">+$312K</td>
+            <td class="tag-green">+7.1%</td>
+            <td><div class="growth-bar-wrap"><div class="growth-bar bar-positive" style="width:53px"></div><span class="tag-green">+7.1%</span></div></td>
+            <td><span class="risk-sev sev-low">On track</span></td>
+          </tr>
+          <tr>
+            <td class="cat-name">Snacks</td>
+            <td>$4.6M</td>
+            <td>$4.4M</td>
+            <td class="tag-green">+$216K</td>
+            <td class="tag-amber">+4.9%</td>
+            <td><div class="growth-bar-wrap"><div class="growth-bar bar-positive" style="width:37px"></div><span class="tag-amber">+4.9%</span></div></td>
+            <td><span class="risk-sev sev-med">Monitor</span></td>
+          </tr>
+          <tr>
+            <td class="cat-name">Pet</td>
+            <td>$2.4M</td>
+            <td>$2.3M</td>
+            <td class="tag-green">+$95K</td>
+            <td class="tag-amber">+4.0%</td>
+            <td><div class="growth-bar-wrap"><div class="growth-bar bar-positive" style="width:30px"></div><span class="tag-amber">+4.0%</span></div></td>
+            <td><span class="risk-sev sev-med">At risk</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PROMO MECHANICS -->
+    <div class="section">
+      <div class="section-label">Promotional mechanic breakdown</div>
+      <div class="mech-grid">
+        <div class="mech-card">
+          <div class="mech-header mech-tpr">TPR · Temporary Price Reduction</div>
+          <div class="mech-body">
+            <div class="mech-stat">
+              <div class="mech-stat-label">Avg lift vs. base</div>
+              <div class="mech-stat-value">15%</div>
+            </div>
+            <div class="mech-stat">
+              <div class="mech-stat-label">Best for</div>
+              <div class="mech-stat-value" style="font-size:13px">Volume</div>
+            </div>
+            <div class="mech-note">Highest-frequency mechanic. Drives velocity but erodes base price perception at high frequency. Monitor markdown % of sales.</div>
+          </div>
+        </div>
+        <div class="mech-card">
+          <div class="mech-header mech-bogo">BOGO · Buy One Get One</div>
+          <div class="mech-body">
+            <div class="mech-stat">
+              <div class="mech-stat-label">Avg lift vs. base</div>
+              <div class="mech-stat-value">30%</div>
+            </div>
+            <div class="mech-stat">
+              <div class="mech-stat-label">Best for</div>
+              <div class="mech-stat-value" style="font-size:13px">Trial & Load</div>
+            </div>
+            <div class="mech-note">Highest unit lift of all four mechanics. Effective for household loading and trial conversion, but watch for inter-week demand pull-forward.</div>
+          </div>
+        </div>
+        <div class="mech-card">
+          <div class="mech-header mech-feat">Feature · Weekly Ad</div>
+          <div class="mech-body">
+            <div class="mech-stat">
+              <div class="mech-stat-label">Avg lift vs. base</div>
+              <div class="mech-stat-value">25%</div>
+            </div>
+            <div class="mech-stat">
+              <div class="mech-stat-label">Best for</div>
+              <div class="mech-stat-value" style="font-size:13px">Awareness</div>
+            </div>
+            <div class="mech-note">Strong awareness driver. When combined with TPR, additive lift exceeds either mechanic alone. Critical for new item launch weeks.</div>
+          </div>
+        </div>
+        <div class="mech-card">
+          <div class="mech-header mech-disp">Display · In-Store</div>
+          <div class="mech-body">
+            <div class="mech-stat">
+              <div class="mech-stat-label">Avg lift vs. base</div>
+              <div class="mech-stat-value">12%</div>
+            </div>
+            <div class="mech-stat">
+              <div class="mech-stat-label">Best for</div>
+              <div class="mech-stat-value" style="font-size:13px">Impulse</div>
+            </div>
+            <div class="mech-note">Lowest standalone lift but stacks well with Feature. Feature + Display combo generates ~3× the lift of Display alone in this dataset.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPLIER OTIF -->
+    <div class="section">
+      <div class="section-label">Supplier OTIF scorecard</div>
+      <div class="supplier-grid">
+        <div class="supplier-card">
+          <div class="sup-name">Scintilla Brands</div>
+          <div class="sup-otif tag-green">93.6%</div>
+          <div class="sup-target">Target: 96%</div>
+          <div class="sup-gap tag-amber">−2.4 pp</div>
+        </div>
+        <div class="supplier-card">
+          <div class="sup-name">FreshCo</div>
+          <div class="sup-otif tag-amber">91.8%</div>
+          <div class="sup-target">Target: 94%</div>
+          <div class="sup-gap tag-red">−2.2 pp</div>
+        </div>
+        <div class="supplier-card">
+          <div class="sup-name">Hydra Beauty</div>
+          <div class="sup-otif tag-amber">92.0%</div>
+          <div class="sup-target">Target: 94%</div>
+          <div class="sup-gap tag-red">−2.0 pp</div>
+        </div>
+        <div class="supplier-card">
+          <div class="sup-name">Peak Snacks</div>
+          <div class="sup-otif tag-red">88.4%</div>
+          <div class="sup-target">Target: 90%</div>
+          <div class="sup-gap tag-red">−1.6 pp</div>
+        </div>
+        <div class="supplier-card">
+          <div class="sup-name">PetJoy</div>
+          <div class="sup-otif tag-red">89.9%</div>
+          <div class="sup-target">Target: 92%</div>
+          <div class="sup-gap tag-red">−2.1 pp</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RISK TABLE -->
+    <div class="section">
+      <div class="section-label">Risk register & prioritization</div>
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>Severity</th>
+            <th>Current KPI</th>
+            <th>Business impact</th>
+            <th>Recommended action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600">In-stock rate below target</td>
+            <td><span class="risk-sev sev-high">High</span></td>
+            <td>88.9% vs. 95% target</td>
+            <td>$4.1M in lost sales quantified</td>
+            <td>Safety stock review; reorder point reset for top lost-sales items</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">OTIF below Walmart goal</td>
+            <td><span class="risk-sev sev-high">High</span></td>
+            <td>91.3% vs. 93.4% goal</td>
+            <td>Fine exposure; shelf positioning risk</td>
+            <td>Escalate Peak Snacks and PetJoy to quarterly OTIF review</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">High promo dependency</td>
+            <td><span class="risk-sev sev-med">Medium</span></td>
+            <td>26.8% promo mix</td>
+            <td>Base velocity erosion risk</td>
+            <td>Evaluate 12-week base velocity trend post-promo by SKU</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">Pet category growth lag</td>
+            <td><span class="risk-sev sev-med">Medium</span></td>
+            <td>+4.0% vs. +6.8% total</td>
+            <td>Share loss if category grows faster than portfolio</td>
+            <td>Category benchmark analysis vs. market-level Beverages data</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">WOS below 2.0 threshold</td>
+            <td><span class="risk-sev sev-med">Medium</span></td>
+            <td>1.4 avg WOS</td>
+            <td>Stockout amplification during promo spikes</td>
+            <td>Build inventory pre-position 2 weeks ahead of Feature events</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <div class="section">
+      <div class="section-label">Top 4 recommendations for next quarter</div>
+      <ul class="reco-list">
+        <li class="reco-item">
+          <div class="reco-num">01</div>
+          <div class="reco-content">
+            <div class="reco-title">Fix in-stock before adding new promo events</div>
+            <div class="reco-body">Running promotions on items that are already stocking out amplifies the problem — demand spikes with no inventory to fulfill. Conduct a reorder point reset across the 50 highest-risk store/item pairs before Q1 promo planning begins.</div>
+            <span class="reco-impact">Estimated opportunity: partial recovery of $4.1M lost sales</span>
+          </div>
+        </li>
+        <li class="reco-item">
+          <div class="reco-num">02</div>
+          <div class="reco-content">
+            <div class="reco-title">Shift trade spend from TPR to Feature + Display combos</div>
+            <div class="reco-body">TPR is the most-used mechanic but has the lowest ROI per dollar of trade spend. Feature + Display combinations deliver an additive lift effect that outperforms either mechanic alone. Reallocating even 15% of trade spend to this combination improves incremental ROI without increasing total spend.</div>
+            <span class="reco-impact">Trade spend efficiency improvement</span>
+          </div>
+        </li>
+        <li class="reco-item">
+          <div class="reco-num">03</div>
+          <div class="reco-content">
+            <div class="reco-title">Escalate Peak Snacks and PetJoy OTIF to JBP agenda</div>
+            <div class="reco-body">Both suppliers are below their contractual OTIF targets. At Walmart, OTIF misses generate financial penalties and erode vendor standing in annual shelf space negotiations. Placing OTIF recovery as a formal agenda item in the next Joint Business Planning cycle creates accountability and a documented improvement path.</div>
+            <span class="reco-impact">Fine avoidance; shelf position protection</span>
+          </div>
+        </li>
+        <li class="reco-item">
+          <div class="reco-num">04</div>
+          <div class="reco-content">
+            <div class="reco-title">Investigate Pet category shelf productivity vs. benchmarks</div>
+            <div class="reco-body">Pet growing at +4.0% against a portfolio average of +6.8% suggests either a category-level headwind or a shelf placement issue at the store level. Request category-level market share data through the Scintilla portal to separate the two scenarios before making a ranging decision.</div>
+            <span class="reco-impact">Category growth opportunity identification</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span class="footer-note">Retail_CPG_Analytics · FY2024 Full Year · Synthetic Scintilla-style dataset · 600 stores · 5 categories</span>
+    <span class="footer-tag">Layer 2 · Executive Briefing</span>
+  </div>
+
+</div>
+</body>
+</html>
