@@ -1,800 +1,889 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Technical Reference — Data Model, SQL & DAX</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Reference · Retail CPG Analytics Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
-  :root {
-    --navy: #0A1628;
-    --blue: #1B3A6B;
-    --accent: #0066CC;
-    --gold: #C8932A;
-    --light-blue: #E8F0FA;
-    --border: #CBD5E8;
-    --text: #1A2340;
-    --muted: #5A6A8A;
-    --white: #FFFFFF;
-    --green: #1A7A4A;
-    --code-bg: #0D1F35;
-    --code-string: #7EC8A0;
-    --code-keyword: #7FBBF0;
-    --code-comment: #5A7A9A;
-    --code-fn: #F0C070;
-    --code-number: #E8A060;
-  }
+    :root {
+      --navy: #0A1628;
+      --blue: #1B3A6B;
+      --accent: #0066CC;
+      --gold: #C8932A;
+      --light-blue: #E8F0FA;
+      --border: #CBD5E8;
+      --text: #1A2340;
+      --muted: #5A6A8A;
+      --white: #FFFFFF;
+      --green: #1A7A4A;
+      --green-light: #E6F4EE;
+      --red: #C23B22;
+      --red-light: #FDECEA;
+      --amber: #8C5A00;
+      --amber-light: #FFF4E5;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'IBM Plex Sans', sans-serif; background: #F4F6FB; color: var(--text); font-size: 14px; line-height: 1.6; }
-  .page { max-width: 960px; margin: 0 auto; background: var(--white); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .header {
-    background: var(--navy);
-    padding: 36px 48px 28px;
-    border-bottom: 4px solid var(--gold);
-  }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #F4F6FB;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+    }
 
-  .badge {
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 2px;
-  }
+    /* COVER HEADER */
+    .cover {
+      background: var(--navy);
+      padding: 48px 48px 36px;
+      border-bottom: 4px solid var(--gold);
+    }
 
-  .header h1 { font-size: 24px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
-  .header-sub { font-size: 13px; color: #8AA4CC; font-weight: 300; }
+    .cover-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
 
-  .content { padding: 36px 48px; }
-  .section { margin-bottom: 44px; }
+    .badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
 
-  .section-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .cover-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
 
-  /* SCHEMA DIAGRAM */
-  .schema-diagram {
-    background: var(--navy);
-    border-radius: 4px;
-    padding: 32px;
-    position: relative;
-    overflow: hidden;
-  }
+    .cover h1 {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
 
-  .schema-diagram::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold));
-  }
+    .cover-sub {
+      font-size: 14px;
+      color: #8AA4CC;
+      font-weight: 300;
+    }
 
-  .schema-layout {
-    display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    gap: 20px;
-    align-items: center;
-  }
+    .cover-context {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+    }
 
-  .dim-col { display: flex; flex-direction: column; gap: 10px; }
-  .fact-col { display: flex; flex-direction: column; gap: 10px; }
+    .cover-context p {
+      font-size: 13px;
+      color: #B8CADD;
+      line-height: 1.65;
+    }
 
-  .dim-table {
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 4px;
-    overflow: hidden;
-  }
+    /* CONTENT */
+    .content {
+      padding: 40px 48px;
+    }
 
-  .dim-header {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--navy);
-    padding: 5px 10px;
-  }
+    .section {
+      margin-bottom: 44px;
+    }
 
-  .dim-hdr-blue { background: #2E6AAA; color: #E8F4FF; }
-  .dim-hdr-gold { background: #8C6020; color: #FFF0D0; }
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  .dim-fields { padding: 6px 10px; }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
-  .dim-field {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: #7AA8CC;
-    margin-bottom: 2px;
-    display: flex;
-    gap: 6px;
-  }
+    /* INSIGHT CARD */
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
 
-  .field-pk { color: var(--gold); }
-  .field-type { color: #4A6A8A; }
+    .insight-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-  .center-hub {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
+    .insight-header {
+      background: var(--navy);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .fact-table {
-    border: 2px solid var(--accent);
-    border-radius: 4px;
-    overflow: hidden;
-    width: 100%;
-  }
+    .insight-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.03em;
+    }
 
-  .fact-header {
-    background: var(--accent);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--white);
-    padding: 6px 10px;
-    text-align: center;
-  }
+    .insight-kpi {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-  .fact-fields { padding: 6px 10px; }
+    .kpi-up {
+      color: #5ECFA0;
+    }
 
-  .relationship-note {
-    text-align: center;
-    font-size: 10px;
-    color: #5A7A9A;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+    .kpi-warn {
+      color: #FFC355;
+    }
 
-  .cardinality-box {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 4px;
-    padding: 12px 16px;
-    margin-top: 20px;
-  }
+    .kpi-down {
+      color: #FF7A6A;
+    }
 
-  .cardinality-title {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
+    .insight-body {
+      padding: 14px 16px;
+    }
 
-  .cardinality-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    padding: 3px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-family: 'IBM Plex Mono', monospace;
-  }
+    .finding {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
 
-  .cardinality-row:last-child { border-bottom: none; }
+    .finding:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
 
-  .rel-from { color: #8AA4CC; }
-  .rel-to { color: #7EC8A0; }
-  .rel-type { color: #F0C070; }
-  .rel-key { color: #5A7A9A; }
+    .finding-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
 
-  /* DECISION LOG */
-  .decision-list { list-style: none; }
+    .finding-text {
+      font-size: 12.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
 
-  .decision-item {
-    display: flex;
-    gap: 16px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-  }
+    .action-box {
+      background: #FFF8EC;
+      border-left: 3px solid var(--gold);
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 0 4px 4px 0;
+    }
 
-  .decision-item:last-child { border-bottom: none; }
+    .action-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2px;
+    }
 
-  .decision-icon {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    background: var(--navy);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
+    .action-text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.45;
+    }
 
-  .decision-title { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
-  .decision-body { font-size: 12.5px; color: var(--text); line-height: 1.55; margin-bottom: 5px; }
+    /* CATEGORY SCORECARD */
+    .scorecard-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
 
-  .decision-result {
-    font-size: 11.5px;
-    color: var(--green);
-    font-weight: 500;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+    .scorecard-table thead th {
+      background: var(--navy);
+      color: #8AA4CC;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+    }
 
-  /* CODE BLOCK */
-  .code-block {
-    background: var(--code-bg);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
+    .scorecard-table thead th:not(:first-child) {
+      text-align: right;
+    }
 
-  .code-header {
-    background: rgba(255,255,255,0.06);
-    padding: 8px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
+    .scorecard-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
 
-  .code-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: #7AA8CC;
-    font-weight: 500;
-  }
+    .scorecard-table tbody tr:hover {
+      background: var(--light-blue);
+    }
 
-  .code-lang {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: #4A6A8A;
-    background: rgba(255,255,255,0.05);
-    padding: 2px 8px;
-    border-radius: 2px;
-  }
+    .scorecard-table td {
+      padding: 11px 14px;
+      vertical-align: middle;
+    }
 
-  .code-body {
-    padding: 16px 20px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    line-height: 1.65;
-    color: #B8CADD;
-    overflow-x: auto;
-    white-space: pre;
-  }
+    .scorecard-table td:not(:first-child) {
+      text-align: right;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+    }
 
-  .sql-comment { color: var(--code-comment); }
-  .sql-keyword { color: var(--code-keyword); }
-  .sql-fn { color: var(--code-fn); }
-  .sql-string { color: var(--code-string); }
-  .sql-number { color: var(--code-number); }
+    .cat-name {
+      font-weight: 600;
+      color: var(--navy);
+    }
 
-  .annotation-box {
-    background: #FFF8EC;
-    border: 1px solid #F0C980;
-    border-left: 3px solid var(--gold);
-    border-radius: 0 4px 4px 0;
-    padding: 10px 14px;
-    margin-top: -12px;
-    margin-bottom: 20px;
-  }
+    .growth-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-end;
+    }
 
-  .annotation-label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #8C5A00;
-    margin-bottom: 3px;
-  }
+    .growth-bar {
+      height: 6px;
+      border-radius: 3px;
+      min-width: 4px;
+    }
 
-  .annotation-text { font-size: 12px; color: var(--text); line-height: 1.5; }
+    .bar-positive {
+      background: var(--green);
+    }
 
-  /* DAX TABLE */
-  .dax-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
+    .bar-negative {
+      background: var(--red);
+    }
 
-  .dax-table thead th {
-    background: var(--navy);
-    color: #8AA4CC;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 9px 12px;
-    text-align: left;
-  }
+    .tag-green {
+      color: var(--green);
+      font-weight: 600;
+    }
 
-  .dax-table tbody tr { border-bottom: 1px solid var(--border); }
-  .dax-table tbody tr:hover { background: var(--light-blue); }
-  .dax-table td { padding: 9px 12px; vertical-align: top; }
+    .tag-red {
+      color: var(--red);
+      font-weight: 600;
+    }
 
-  .dax-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px;
-    font-weight: 600;
-    color: var(--accent);
-  }
+    .tag-amber {
+      color: var(--amber);
+      font-weight: 600;
+    }
 
-  .dax-expr {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--code-comment);
-    background: #EEF3FA;
-    padding: 3px 7px;
-    border-radius: 3px;
-    display: inline-block;
-    margin-top: 3px;
-    max-width: 300px;
-    word-break: break-all;
-  }
+    /* PROMO MECHANICS */
+    .mech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
 
-  .folder-header {
-    background: var(--light-blue);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 7px 12px;
-    border-bottom: 1px solid var(--border);
-  }
+    .mech-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-  .format-pill {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    background: #EEF3FA;
-    color: var(--blue);
-    border: 1px solid var(--border);
-    padding: 1px 6px;
-    border-radius: 2px;
-  }
+    .mech-header {
+      padding: 10px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
 
-  /* FOOTER */
-  .footer {
-    background: var(--navy);
-    padding: 18px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .mech-tpr {
+      background: #0A4F8C;
+    }
 
-  .footer-note { font-size: 11px; color: #4A6080; font-family: 'IBM Plex Mono', monospace; }
-  .footer-tag { font-size: 11px; color: var(--gold); font-weight: 600; }
-</style>
+    .mech-bogo {
+      background: #1A7A4A;
+    }
+
+    .mech-feat {
+      background: #7A4A00;
+    }
+
+    .mech-disp {
+      background: #5A1A6B;
+    }
+
+    .mech-body {
+      padding: 12px;
+    }
+
+    .mech-stat {
+      margin-bottom: 8px;
+    }
+
+    .mech-stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .mech-stat-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .mech-note {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+
+    /* RISK TABLE */
+    .risk-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .risk-table th {
+      background: var(--navy);
+      color: #8AA4CC;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .risk-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .risk-sev {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .sev-high {
+      background: var(--red-light);
+      color: var(--red);
+      border: 1px solid #F0B0A0;
+    }
+
+    .sev-med {
+      background: var(--amber-light);
+      color: var(--amber);
+      border: 1px solid #F0C980;
+    }
+
+    .sev-low {
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid #9ECBB8;
+    }
+
+    /* OTIF BLOCK */
+    .supplier-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .supplier-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .sup-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      min-height: 28px;
+    }
+
+    .sup-otif {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .sup-gap {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .sup-target {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* RECOMMENDATIONS */
+    .reco-list {
+      list-style: none;
+    }
+
+    .reco-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .reco-item:last-child {
+      border-bottom: none;
+    }
+
+    .reco-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reco-content {}
+
+    .reco-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .reco-body {
+      font-size: 12.5px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .reco-impact {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green);
+      background: var(--green-light);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: #4A6080;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .footer-tag {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ---- utilities added for rewritten layers ---- */
+    .kpi-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 4px 0 8px;
+    }
+
+    .kpi-cell {
+      flex: 1 1 150px;
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .kpi-cell .kpi-label {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .kpi-cell .kpi-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    .kpi-cell .kpi-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .note {
+      background: var(--light-blue);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+
+    .note.warn {
+      background: var(--amber-light);
+      border-left-color: var(--amber);
+    }
+
+    .note .note-label {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .note.warn .note-label {
+      color: var(--amber);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .codeblock {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      line-height: 1.55;
+      background: var(--navy);
+      color: #D6E2F5;
+      border-radius: 8px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      margin: 8px 0;
+    }
+
+    .codeblock .c {
+      color: #6E86AE;
+    }
+
+    .dm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .dm-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dm-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: var(--white);
+    }
+
+    .dm-card h4 {
+      font-size: 13px;
+      color: var(--navy);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .dm-card p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+  </style>
 </head>
+
 <body>
-<div class="page">
+  <div class="page">
 
-  <div class="header">
-    <div class="header-top">
-      <div>
-        <h1>Technical Reference — Data Model, SQL & DAX</h1>
-        <div class="header-sub">Star schema design decisions · Annotated SQL views · DAX measure library · 77 measures across 6 folders</div>
+    <div class="cover">
+      <div class="cover-meta">
+        <div>
+          <div class="cover-label">Technical Reference</div>
+          <h1>Data Model, SQL<br>&amp; DAX Library</h1>
+          <div class="cover-sub">Star Schema &middot; 4 Fact + 7 Dimension &middot; 77 Measures across 6 Folders</div>
+        </div>
+        <div class="badge">Layer 3 &middot; Technical Depth</div>
       </div>
-      <div class="badge">Layer 3 · Technical Depth</div>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <!-- DATA MODEL DIAGRAM -->
-    <div class="section">
-      <div class="section-label">Star schema — entity relationship overview</div>
-      <div class="schema-diagram">
-
-        <div class="schema-layout">
-          <!-- LEFT: Dim tables -->
-          <div class="dim-col">
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-blue">Dim_Date</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> week_id <span class="field-type">INT</span></div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;week_start_date</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;quarter_id · fiscal_year_label</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;season · is_holiday_week</div>
-              </div>
-            </div>
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-blue">Dim_Store</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> store_id <span class="field-type">INT</span></div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;region · state · store_format</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;urbanicity · volume_tier</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;market_cluster · footfall</div>
-              </div>
-            </div>
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-blue">Dim_Item</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> item_id <span class="field-type">INT</span></div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;item_description · base_price</div>
-                <div class="dim-field"><span class="field-pk">FK</span> category_id · fineline_id</div>
-                <div class="dim-field"><span class="field-pk">FK</span> supplier_id · case_pack</div>
-              </div>
-            </div>
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-gold">Dim_PromoMechanism</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> promo_mechanism_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;promo_type · promo_description</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;avg_lift_pct</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CENTER: Fact tables -->
-          <div class="center-hub">
-            <div class="fact-table">
-              <div class="fact-header">Fact_WeeklySales</div>
-              <div class="fact-fields">
-                <div class="dim-field"><span class="field-pk">FK</span> week_id · store_id · item_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;units_ty / ly · sales_ty / ly</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;gross_margin_ty / ly</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;is_on_promo · promo_lift_units</div>
-              </div>
-            </div>
-            <div class="relationship-note">26,000 rows · Week×Store×Item</div>
-
-            <div class="fact-table">
-              <div class="fact-header">Fact_Inventory</div>
-              <div class="fact-fields">
-                <div class="dim-field"><span class="field-pk">FK</span> week_id · store_id · item_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;on_hand_bop / eop · receipts</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;lost_sales_units · in_stock_flag</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;weeks_of_supply · fill_rate</div>
-              </div>
-            </div>
-            <div class="relationship-note">26,000 rows · Week×Store×Item</div>
-
-            <div class="fact-table">
-              <div class="fact-header">Fact_PromoCalendar</div>
-              <div class="fact-fields">
-                <div class="dim-field"><span class="field-pk">FK</span> week_id · item_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;incremental_units · lift_pct</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;est_trade_spend · roi_estimate</div>
-              </div>
-            </div>
-            <div class="relationship-note">520 rows · Week×Item</div>
-
-            <div class="fact-table">
-              <div class="fact-header">Fact_SupplyChain</div>
-              <div class="fact-fields">
-                <div class="dim-field"><span class="field-pk">FK</span> week_id · item_id · supplier_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;otif_actual_pct · on_time_flag</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;shortage_units · mape_naive / ml</div>
-              </div>
-            </div>
-            <div class="relationship-note">520 rows · Week×Item</div>
-          </div>
-
-          <!-- RIGHT: More dims -->
-          <div class="fact-col">
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-blue">Dim_Category</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> category_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;category_name</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;Home Care · Beauty · Bev</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;Snacks · Pet</div>
-              </div>
-            </div>
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-blue">Dim_Fineline</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> fineline_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;fineline_name</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;Sub-category groupings</div>
-              </div>
-            </div>
-            <div class="dim-table">
-              <div class="dim-header dim-hdr-blue">Dim_Supplier</div>
-              <div class="dim-fields">
-                <div class="dim-field"><span class="field-pk">PK</span> supplier_id</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;supplier_name · supplier_segment</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;lead_time_days</div>
-                <div class="dim-field">&nbsp;&nbsp;&nbsp;otif_target_pct</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cardinality notes -->
-        <div class="cardinality-box">
-          <div class="cardinality-title">Relationship cardinality</div>
-          <div class="cardinality-row">
-            <span class="rel-from">Dim_Date</span>
-            <span class="rel-type">1 : Many</span>
-            <span class="rel-to">Fact_WeeklySales, Fact_Inventory, Fact_PromoCalendar, Fact_SupplyChain</span>
-            <span class="rel-key">week_id</span>
-          </div>
-          <div class="cardinality-row">
-            <span class="rel-from">Dim_Store</span>
-            <span class="rel-type">1 : Many</span>
-            <span class="rel-to">Fact_WeeklySales, Fact_Inventory</span>
-            <span class="rel-key">store_id</span>
-          </div>
-          <div class="cardinality-row">
-            <span class="rel-from">Dim_Item</span>
-            <span class="rel-type">1 : Many</span>
-            <span class="rel-to">All four fact tables</span>
-            <span class="rel-key">item_id</span>
-          </div>
-          <div class="cardinality-row">
-            <span class="rel-from">Dim_PromoMechanism</span>
-            <span class="rel-type">1 : Many</span>
-            <span class="rel-to">Fact_WeeklySales (is_on_promo = TRUE)</span>
-            <span class="rel-key">promo_mechanism_id</span>
-          </div>
-        </div>
+      <div class="cover-context">
+        <p>The structure behind the dashboards: the star schema, the design decisions that make YoY reliable on a Walmart fiscal calendar, the SQL views that act as the semantic layer, and the core DAX measures with their business use.</p>
       </div>
     </div>
 
-    <!-- DESIGN DECISIONS -->
-    <div class="section">
-      <div class="section-label">Model design decisions & trade-offs</div>
-      <ul class="decision-list">
-        <li class="decision-item">
-          <div class="decision-icon">🔑</div>
-          <div>
-            <div class="decision-title">Composite date_key to resolve non-unique week_id</div>
-            <div class="decision-body">Dim_Date contains both TY and LY weeks (104 rows total), which caused week_id to appear twice — once per year. This broke the 1:Many relationship and created ambiguous filter context in Power BI. Resolution: added a composite key combining week_id + fiscal_year_label, making every row in Dim_Date uniquely addressable.</div>
-            <div class="decision-result">→ Result: Correct filter propagation from Dim_Date to all four fact tables</div>
+    <div class="content">
+
+      <!-- ============ SCHEMA ============ -->
+      <div class="section">
+        <div class="section-label">Star schema overview</div>
+        <div class="dm-grid">
+          <div class="dm-card">
+            <h4>Fact_WeeklySales</h4>
+            <p>FK week_id, store_id, item_id &middot; units and sales TY/LY, gross margin, is_on_promo, promo_lift_units &middot; 26,000 rows</p>
           </div>
-        </li>
-        <li class="decision-item">
-          <div class="decision-icon">📐</div>
-          <div>
-            <div class="decision-title">TY/LY stored as columns, not separate fact rows</div>
-            <div class="decision-body">Rather than using time intelligence functions (which don't work with Walmart's 52-week NRF calendar), both TY and LY metrics are stored as columns within the same fact table row. This pattern mirrors how Scintilla exports data and avoids all fiscal calendar edge cases inherent in standard DATEADD / SAMEPERIODLASTYEAR patterns.</div>
-            <div class="decision-result">→ Result: Reliable YoY comparisons without custom fiscal calendar workarounds in DAX</div>
+          <div class="dm-card">
+            <h4>Fact_Inventory</h4>
+            <p>FK week_id, store_id, item_id &middot; on-hand BOP/EOP, receipts, lost_sales_units, in_stock_flag, weeks_of_supply, fill_rate &middot; 26,000 rows</p>
           </div>
-        </li>
-        <li class="decision-item">
-          <div class="decision-icon">⭐</div>
-          <div>
-            <div class="decision-title">Import mode over DirectQuery for dashboard performance</div>
-            <div class="decision-body">Given the dataset size (52K total fact rows), Import mode was chosen over DirectQuery. This compresses the model in memory and delivers sub-second visual render times in Power BI. For a production scenario with millions of rows or real-time requirements, DirectQuery or Composite Models would be the appropriate architecture, and the SQL views are already structured to support that transition.</div>
-            <div class="decision-result">→ Result: &lt;1s visual render time; SQL views ready for DirectQuery migration</div>
+          <div class="dm-card">
+            <h4>Fact_PromoCalendar</h4>
+            <p>FK week_id, item_id &middot; incremental_units, lift_pct, est_trade_spend, roi_estimate &middot; 520 rows</p>
           </div>
-        </li>
-        <li class="decision-item">
-          <div class="decision-icon">📁</div>
-          <div>
-            <div class="decision-title">All 77 measures stored on source fact tables, organized in display folders</div>
-            <div class="decision-body">Measures are co-located with their source data (e.g., all Sales measures live on Fact_WeeklySales) and organized into 6 display folders matching the 6 dashboard pages. This mirrors how a production Power BI semantic layer is organized in enterprise CPG environments, where analysts need to find the right measure quickly without reading DAX.</div>
-            <div class="decision-result">→ Result: Scalable measure library; folder structure matches dashboard navigation</div>
+          <div class="dm-card">
+            <h4>Fact_SupplyChain</h4>
+            <p>FK week_id, item_id, supplier_id &middot; otif flags, on_time, in_full, shortage_units, fine exposure, MAPE &middot; 520 PO lines</p>
           </div>
-        </li>
-      </ul>
+          <div class="dm-card">
+            <h4>Dim_Date</h4>
+            <p>Composite key (week_id + fiscal_year_label) &middot; NRF fiscal, quarter, season, holiday week</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_Store / Dim_Item</h4>
+            <p>600 stores (region, format, tier); 10 items (category, fineline, supplier, base price)</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_Supplier</h4>
+            <p>5 suppliers with lead time and contractual OTIF target</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_PromoMechanism / Dim_Category / Dim_Fineline</h4>
+            <p>Promo type, category and sub-category groupings</p>
+          </div>
+        </div>
+        <div class="note">
+          <div class="note-label">Relationships</div>
+          All dimensions resolve 1:Many to the facts with single-direction cross-filter. Dim_Date joins all four facts on the composite date key; Dim_Store joins the two store-grain facts; Dim_Item joins all four.
+        </div>
+      </div>
+
+      <!-- ============ DESIGN DECISIONS ============ -->
+      <div class="section">
+        <div class="section-label">Model design decisions</div>
+        <div class="two-col">
+          <div class="dm-card">
+            <h4>Composite date key</h4>
+            <p>Dim_Date holds both TY and LY weeks, so week_id alone was not unique and broke 1:Many. A composite of week_id and fiscal_year_label makes every row addressable. Result: correct filter propagation to all four facts.</p>
+          </div>
+          <div class="dm-card">
+            <h4>TY and LY as columns</h4>
+            <p>Walmart's 52-week NRF calendar makes standard time intelligence unreliable. TY and LY values are stored in the same fact row, pre-aligned by fiscal week. Result: YoY is simple column subtraction, no DATEADD or SAMEPERIODLASTYEAR edge cases.</p>
+          </div>
+          <div class="dm-card">
+            <h4>Import over DirectQuery</h4>
+            <p>At 52K total fact rows the model compresses under 10MB and renders in under one second. SQL views are structured so a DirectQuery migration is available at production volume.</p>
+          </div>
+          <div class="dm-card">
+            <h4>Boolean filters use = TRUE()</h4>
+            <p>CALCULATE treats a bare boolean column as a table filter. All 14 measures filtering is_on_promo or in_stock_flag use explicit = TRUE() so filter context is unambiguous.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SQL VIEW ============ -->
+      <div class="section">
+        <div class="section-label">Core SQL view (semantic layer)</div>
+        <div class="codeblock"><span class="c">-- vw_SalesDrivers: one row per week x store x item, all dimensions joined.</span>
+          <span class="c">-- Backs the Sales Overview and Weekly Performance pages.</span>
+          CREATE OR REPLACE VIEW vw_SalesDrivers AS
+          SELECT
+          d.week_id, d.fiscal_year_label, d.quarter_id, d.season,
+          s.store_id, s.region, s.store_format, s.volume_tier,
+          i.item_id, i.item_description, c.category_name, sup.supplier_name,
+          fs.units_ty, fs.sales_dollars_ty, fs.gross_margin_ty, fs.sell_price_ty,
+          fs.units_ly, fs.sales_dollars_ly, fs.gross_margin_ly, fs.sell_price_ly,
+          fs.dollar_chg_yoy, fs.pct_chg_yoy, fs.is_on_promo, fs.promo_lift_units,
+          ROUND(fs.gross_margin_ty / NULLIF(fs.sales_dollars_ty, 0), 4) AS gm_rate_ty
+          FROM Fact_WeeklySales fs
+          JOIN Dim_Date d ON fs.week_id = d.week_id
+          JOIN Dim_Store s ON fs.store_id = s.store_id
+          JOIN Dim_Item i ON fs.item_id = i.item_id
+          JOIN Dim_Category c ON i.category_id = c.category_id
+          JOIN Dim_Supplier sup ON i.supplier_id = sup.supplier_id
+          LEFT JOIN Dim_PromoMechanism pm ON fs.promo_mechanism_id = pm.promo_mechanism_id;
+        </div>
+      </div>
+
+      <!-- ============ PRICE/VOLUME ============ -->
+      <div class="section">
+        <div class="section-label">Price vs. volume decomposition</div>
+        <div class="codeblock"><span class="c">-- Splits a category's YoY dollar change into volume, price and mix effects.</span>
+          WITH base AS (
+          SELECT category_name,
+          SUM(dollar_chg_yoy) AS total_dollar_chg,
+          SUM((units_ty - units_ly) * sell_price_ly) AS volume_effect,
+          SUM(units_ly * (sell_price_ty - sell_price_ly)) AS price_effect
+          FROM vw_SalesDrivers
+          GROUP BY category_name
+          )
+          SELECT *,
+          total_dollar_chg - volume_effect - price_effect AS mix_effect
+          FROM base
+          ORDER BY total_dollar_chg DESC;</div>
+        <div class="note">
+          <div class="note-label">Finding from this query</div>
+          Across all five categories the volume effect dominates the price effect, confirming the +6.8% portfolio gain is unit driven rather than price driven.
+        </div>
+      </div>
+
+      <!-- ============ DAX REFERENCE ============ -->
+      <div class="section">
+        <div class="section-label">Core DAX measures</div>
+        <table class="scorecard-table">
+          <thead>
+            <tr>
+              <th>Measure</th>
+              <th>Expression</th>
+              <th>Business use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Sales TY</td>
+              <td>SUM(Fact_WeeklySales[sales_dollars_ty])</td>
+              <td>Primary revenue KPI ($32.23M)</td>
+            </tr>
+            <tr>
+              <td>Sales % Chg YoY</td>
+              <td>DIVIDE([Total Sales TY]-[Total Sales LY], [Total Sales LY], 0)</td>
+              <td>YoY growth (+6.8%); DIVIDE guards zero LY</td>
+            </tr>
+            <tr>
+              <td>Gross Margin %</td>
+              <td>DIVIDE([Gross Margin TY], [Total Sales TY], 0)</td>
+              <td>Profitability (28.0%)</td>
+            </tr>
+            <tr>
+              <td>Promo Sales TY</td>
+              <td>CALCULATE([Total Sales TY], Fact_WeeklySales[is_on_promo] = TRUE())</td>
+              <td>Promo mix (26.8% of sales)</td>
+            </tr>
+            <tr>
+              <td>In-Stock Rate</td>
+              <td>AVERAGE(Fact_Inventory[in_stock_flag])</td>
+              <td>Availability vs. 95% target (88.9%)</td>
+            </tr>
+            <tr>
+              <td>Lost Sales $</td>
+              <td>SUMX(Fact_Inventory, [lost_sales_units] * RELATED(Dim_Item[base_price]))</td>
+              <td>Quantified stockout cost ($4.1M)</td>
+            </tr>
+            <tr>
+              <td>Avg WOS</td>
+              <td>AVERAGE(Fact_Inventory[weeks_of_supply])</td>
+              <td>Forward cover vs. 2.0 floor (1.4)</td>
+            </tr>
+            <tr>
+              <td>OTIF Compliance</td>
+              <td>AVERAGE(Fact_SupplyChain[otif_flag])</td>
+              <td>On-time and in-full delivery (55.0%)</td>
+            </tr>
+            <tr>
+              <td>OTIF Fine Exposure $</td>
+              <td>SUMX(Fact_SupplyChain, [shortage_units] * [fine_rate] when eligible)</td>
+              <td>Penalty exposure ($304K)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
-    <!-- ANNOTATED SQL -->
-    <div class="section">
-      <div class="section-label">Annotated SQL views</div>
-
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-title">vw_SalesDrivers — core weekly P&L view with YoY context</span>
-          <span class="code-lang">SQL · MySQL</span>
-        </div>
-        <div class="code-body"><span class="sql-comment">-- Business purpose: Reproduce the Walmart Scintilla vendor portal weekly view.
--- One row per week × store × item. Joins all dimensions for slice-and-dice.
--- Used by: Power BI Pages 1 (Sales Overview) and 2 (Weekly Performance).</span>
-
-<span class="sql-keyword">CREATE OR REPLACE VIEW</span> vw_SalesDrivers <span class="sql-keyword">AS</span>
-<span class="sql-keyword">SELECT</span>
-    <span class="sql-comment">-- Date context for fiscal calendar filtering</span>
-    d.week_id, d.week_start_date, d.quarter_id, d.fiscal_year_label,
-    d.season, d.is_holiday_week,
-
-    <span class="sql-comment">-- Store attributes for geographic slicing</span>
-    s.store_id, s.region, s.state, s.store_format,
-    s.urbanicity, s.volume_tier, s.market_cluster,
-
-    <span class="sql-comment">-- Product hierarchy for category/fineline rollups</span>
-    i.item_id, i.item_description, c.category_name,
-    f.fineline_name, sup.supplier_name, sup.supplier_segment,
-    pm.promo_type, pm.promo_description,
-
-    <span class="sql-comment">-- TY actuals: current fiscal year performance</span>
-    fs.units_ty, fs.sales_dollars_ty, fs.gross_margin_ty,
-    fs.sell_price_ty, fs.markdown_dollars_ty,
-
-    <span class="sql-comment">-- LY actuals: prior year baseline for YoY comparison</span>
-    fs.units_ly, fs.sales_dollars_ly, fs.gross_margin_ly,
-
-    <span class="sql-comment">-- Pre-computed YoY KPIs (avoids recalculation in Power BI)</span>
-    fs.dollar_chg_yoy, fs.unit_chg_yoy, fs.pct_chg_yoy,
-    fs.is_on_promo, fs.promo_lift_units,
-
-    <span class="sql-comment">-- Derived rates — computed in SQL to reduce DAX complexity</span>
-    <span class="sql-fn">ROUND</span>(fs.gross_margin_ty / <span class="sql-fn">NULLIF</span>(fs.sales_dollars_ty, <span class="sql-number">0</span>), <span class="sql-number">4</span>) <span class="sql-keyword">AS</span> gm_rate_ty,
-    <span class="sql-fn">ROUND</span>(fs.gross_margin_ly / <span class="sql-fn">NULLIF</span>(fs.sales_dollars_ly, <span class="sql-number">0</span>), <span class="sql-number">4</span>) <span class="sql-keyword">AS</span> gm_rate_ly
-
-<span class="sql-keyword">FROM</span> Fact_WeeklySales fs
-<span class="sql-keyword">JOIN</span> Dim_Date        d   <span class="sql-keyword">ON</span> fs.week_id   = d.week_id <span class="sql-keyword">AND</span> d.year = <span class="sql-number">2025</span>
-<span class="sql-keyword">JOIN</span> Dim_Store       s   <span class="sql-keyword">ON</span> fs.store_id  = s.store_id
-<span class="sql-keyword">JOIN</span> Dim_Item        i   <span class="sql-keyword">ON</span> fs.item_id   = i.item_id
-<span class="sql-keyword">JOIN</span> Dim_Category    c   <span class="sql-keyword">ON</span> i.category_id = c.category_id
-<span class="sql-keyword">JOIN</span> Dim_Fineline    f   <span class="sql-keyword">ON</span> i.fineline_id  = f.fineline_id
-<span class="sql-keyword">JOIN</span> Dim_Supplier    sup <span class="sql-keyword">ON</span> i.supplier_id  = sup.supplier_id
-<span class="sql-keyword">LEFT JOIN</span> Dim_PromoMechanism pm
-    <span class="sql-keyword">ON</span> fs.promo_mechanism_id = pm.promo_mechanism_id;
-<span class="sql-comment">-- LEFT JOIN on promo: non-promo weeks have NULL promo_type (expected behavior)</span></div>
-      </div>
-      <div class="annotation-box">
-        <div class="annotation-label">CPG context</div>
-        <div class="annotation-text">The TY/LY column pattern mirrors Scintilla's native export format. Rather than computing prior-year values dynamically using time intelligence, both periods are stored in the same row — eliminating the NRF fiscal calendar problem that breaks standard DATEADD() patterns in Power BI.</div>
-      </div>
-
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-title">Price vs. volume decomposition — standard CPG analytics framework</span>
-          <span class="code-lang">SQL · CTE Pattern</span>
-        </div>
-        <div class="code-body"><span class="sql-comment">-- Business purpose: Separate a category's YoY sales delta into three drivers:
--- (1) Volume effect: how much came from selling more units
--- (2) Price effect: how much came from a price change
--- (3) Mix effect: the residual (product mix shift)
--- This decomposition is standard in CPG JBP reviews and category management.</span>
-
-<span class="sql-keyword">WITH</span> base <span class="sql-keyword">AS</span> (
-    <span class="sql-keyword">SELECT</span>
-        category_name,
-        <span class="sql-fn">SUM</span>(dollar_chg_yoy)                                     <span class="sql-keyword">AS</span> total_dollar_chg,
-        <span class="sql-fn">SUM</span>((units_ty - units_ly) * sell_price_ly)               <span class="sql-keyword">AS</span> volume_effect,
-        <span class="sql-fn">SUM</span>(units_ly * (sell_price_ty - sell_price_ly))          <span class="sql-keyword">AS</span> price_effect
-    <span class="sql-keyword">FROM</span> vw_SalesDrivers
-    <span class="sql-keyword">GROUP BY</span> category_name
-)
-<span class="sql-keyword">SELECT</span>
-    *,
-    <span class="sql-comment">-- Mix effect = total change not explained by volume or price alone</span>
-    total_dollar_chg - volume_effect - price_effect             <span class="sql-keyword">AS</span> mix_effect
-<span class="sql-keyword">FROM</span> base
-<span class="sql-keyword">ORDER BY</span> total_dollar_chg <span class="sql-keyword">DESC</span>;</div>
-      </div>
-      <div class="annotation-box">
-        <div class="annotation-label">CPG context</div>
-        <div class="annotation-text">Price/volume decomposition is a standard deliverable in CPG category reviews and JBP presentations. It distinguishes whether YoY growth came from selling more units (volume-led, sustainable) or raising prices (price-led, at risk if competitive pricing changes). The mix effect captures product assortment shift.</div>
-      </div>
-
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-title">In-stock risk identification — top store/item pairs by lost sales</span>
-          <span class="code-lang">SQL · Window Function</span>
-        </div>
-        <div class="code-body"><span class="sql-comment">-- Business purpose: Identify the highest-priority store/item combinations for
--- replenishment intervention. In a real Walmart vendor review, this list drives
--- the 'at-risk item' conversation in the weekly ops call.</span>
-
-<span class="sql-keyword">SELECT</span>
-    store_id,
-    item_description,
-    category_name,
-    <span class="sql-fn">ROUND</span>(<span class="sql-fn">AVG</span>(in_stock_flag) * <span class="sql-number">100</span>, <span class="sql-number">1</span>)          <span class="sql-keyword">AS</span> in_stock_rate_pct,
-    <span class="sql-fn">SUM</span>(lost_sales_units)                           <span class="sql-keyword">AS</span> total_lost_units,
-    <span class="sql-fn">SUM</span>(lost_sales_units * base_price)              <span class="sql-keyword">AS</span> total_lost_dollars,
-    <span class="sql-fn">SUM</span>(<span class="sql-keyword">CASE WHEN</span> stock_status=<span class="sql-string">'Critical'</span> <span class="sql-keyword">THEN</span> <span class="sql-number">1</span> <span class="sql-keyword">ELSE</span> <span class="sql-number">0</span> <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> critical_weeks
-<span class="sql-keyword">FROM</span> vw_InventoryHealth
-<span class="sql-keyword">GROUP BY</span> store_id, item_description, category_name
-<span class="sql-keyword">HAVING</span> in_stock_rate_pct < <span class="sql-number">85</span>       <span class="sql-comment">-- Filter to materially at-risk pairs only</span>
-<span class="sql-keyword">ORDER BY</span> total_lost_dollars <span class="sql-keyword">DESC</span>    <span class="sql-comment">-- Prioritize by revenue impact</span>
-<span class="sql-keyword">LIMIT</span> <span class="sql-number">10</span>;</div>
-      </div>
-    </div>
-
-    <!-- DAX REFERENCE -->
-    <div class="section">
-      <div class="section-label">DAX measure reference — selected measures by folder</div>
-      <table class="dax-table">
-        <thead>
-          <tr>
-            <th>Measure</th>
-            <th>Format</th>
-            <th>DAX expression</th>
-            <th>CPG use case</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td colspan="4" class="folder-header">01 · Sales (Fact_WeeklySales) — Pages 1 & 2</td></tr>
-          <tr>
-            <td><div class="dax-name">Total Sales TY</div></td>
-            <td><span class="format-pill">$#,##0.00</span></td>
-            <td><div class="dax-expr">SUM(Fact_WeeklySales[sales_dollars_ty])</div></td>
-            <td style="font-size:12px">Gross revenue current year. Primary KPI card on Sales Overview page.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Sales % Chg YoY</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">DIVIDE([Total Sales TY]-[Total Sales LY], [Total Sales LY], 0)</div></td>
-            <td style="font-size:12px">YoY percentage. DIVIDE() handles zero-division when LY has no sales.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Gross Margin %</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">DIVIDE([Gross Margin TY], [Total Sales TY], 0)</div></td>
-            <td style="font-size:12px">Core profitability KPI. Walmart's standard margin view for supplier scorecards.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Markdown % of Sales</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">DIVIDE([Total Markdown $], [Total Sales TY], 0)</div></td>
-            <td style="font-size:12px">Price efficiency KPI. High markdown % signals excessive promotional pricing.</td>
-          </tr>
-          <tr><td colspan="4" class="folder-header">02 · Promo (Fact_WeeklySales + Fact_PromoCalendar) — Page 3</td></tr>
-          <tr>
-            <td><div class="dax-name">Promo Sales TY</div></td>
-            <td><span class="format-pill">$#,##0.00</span></td>
-            <td><div class="dax-expr">CALCULATE([Total Sales TY], Fact_WeeklySales[is_on_promo] = TRUE())</div></td>
-            <td style="font-size:12px">Sales only during active promo weeks. Note: boolean requires = TRUE() syntax in CALCULATE.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Promo % of Sales</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">DIVIDE([Promo Sales TY], [Total Sales TY], 0)</div></td>
-            <td style="font-size:12px">Promo dependency ratio. Values above 35% suggest over-reliance on trade promotion.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Avg Promo Lift %</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">AVERAGE(Fact_PromoCalendar[promo_lift_pct])</div></td>
-            <td style="font-size:12px">Mean lift across all active promo events. Benchmark: 15% (TPR) to 30% (BOGO).</td>
-          </tr>
-          <tr><td colspan="4" class="folder-header">03 · Inventory (Fact_Inventory) — Page 4</td></tr>
-          <tr>
-            <td><div class="dax-name">In-Stock Rate</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">AVERAGE(Fact_Inventory[in_stock_flag])</div></td>
-            <td style="font-size:12px">% of week/store/item observations that were adequately stocked. Target ≥ 95%.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Lost Sales $</div></td>
-            <td><span class="format-pill">$#,##0.00</span></td>
-            <td><div class="dax-expr">SUMX(Fact_Inventory, Fact_Inventory[lost_sales_units] * RELATED(Dim_Item[base_price]))</div></td>
-            <td style="font-size:12px">SUMX iterates row-by-row to multiply units by price. RELATED() pulls from Dim_Item across the model relationship.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">Avg WOS</div></td>
-            <td><span class="format-pill">0.00</span></td>
-            <td><div class="dax-expr">AVERAGE(Fact_Inventory[weeks_of_supply])</div></td>
-            <td style="font-size:12px">Weeks of supply on hand. Walmart guidance: maintain ≥ 2.0 WOS to avoid stockouts.</td>
-          </tr>
-          <tr><td colspan="4" class="folder-header">04 · Supply Chain (Fact_SupplyChain) — Page 5</td></tr>
-          <tr>
-            <td><div class="dax-name">OTIF Rate (Walmart Standard)</div></td>
-            <td><span class="format-pill">0.0%</span></td>
-            <td><div class="dax-expr">AVERAGE(Fact_SupplyChain[otif_actual_pct])</div></td>
-            <td style="font-size:12px">On-Time In-Full delivery rate vs. Walmart's supplier target. Below target triggers financial penalties.</td>
-          </tr>
-          <tr>
-            <td><div class="dax-name">OTIF Fine Exposure $</div></td>
-            <td><span class="format-pill">$#,##0.00</span></td>
-            <td><div class="dax-expr">SUMX(Fact_SupplyChain, IF([OTIF Rate]&lt;[Target], [Shortage Units]*[Fine Rate], 0))</div></td>
-            <td style="font-size:12px">Estimated penalty exposure for OTIF misses. Drives urgency in supplier review conversations.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="footer">
+      <span class="footer-note">4 fact + 7 dimension &middot; 77 DAX measures &middot; 6 display folders &middot; MySQL + Power BI Desktop</span>
+      <span class="footer-tag">Layer 3 &middot; Technical Depth</span>
     </div>
 
   </div>
-
-  <div class="footer">
-    <span class="footer-note">Data model: 4 fact + 7 dim · 77 DAX measures · 6 display folders · MySQL + Power BI Desktop</span>
-    <span class="footer-tag">Layer 3 · Technical Depth</span>
-  </div>
-
-</div>
 </body>
+
 </html>

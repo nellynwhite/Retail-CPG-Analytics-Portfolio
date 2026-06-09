@@ -1,685 +1,880 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retail CPG Analytics Portfolio — Nelly</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retail CPG Analytics Portfolio · Retail CPG Analytics Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
-  :root {
-    --navy: #0A1628;
-    --blue: #1B3A6B;
-    --accent: #0066CC;
-    --gold: #C8932A;
-    --light-blue: #E8F0FA;
-    --border: #CBD5E8;
-    --text: #1A2340;
-    --muted: #5A6A8A;
-    --white: #FFFFFF;
-    --green: #1A7A4A;
-    --red: #C23B22;
-  }
+    :root {
+      --navy: #0A1628;
+      --blue: #1B3A6B;
+      --accent: #0066CC;
+      --gold: #C8932A;
+      --light-blue: #E8F0FA;
+      --border: #CBD5E8;
+      --text: #1A2340;
+      --muted: #5A6A8A;
+      --white: #FFFFFF;
+      --green: #1A7A4A;
+      --green-light: #E6F4EE;
+      --red: #C23B22;
+      --red-light: #FDECEA;
+      --amber: #8C5A00;
+      --amber-light: #FFF4E5;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: 'IBM Plex Sans', sans-serif;
-    background: #F4F6FB;
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.6;
-  }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #F4F6FB;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-  .page {
-    max-width: 960px;
-    margin: 0 auto;
-    background: var(--white);
-    min-height: 100vh;
-  }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+    }
 
-  /* HEADER */
-  .header {
-    background: var(--navy);
-    padding: 40px 48px 32px;
-    border-bottom: 4px solid var(--gold);
-  }
+    /* COVER HEADER */
+    .cover {
+      background: var(--navy);
+      padding: 48px 48px 36px;
+      border-bottom: 4px solid var(--gold);
+    }
 
-  .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
+    .cover-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
 
-  .badge {
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 2px;
-  }
+    .badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
 
-  .header h1 {
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--white);
-    letter-spacing: -0.3px;
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
+    .cover-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
 
-  .header .tagline {
-    font-size: 13px;
-    color: #8AA4CC;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-  }
+    .cover h1 {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
 
-  .header .bio {
-    font-size: 13.5px;
-    color: #B8CADD;
-    line-height: 1.65;
-    max-width: 680px;
-    margin-top: 16px;
-    border-left: 3px solid var(--gold);
-    padding-left: 16px;
-  }
+    .cover-sub {
+      font-size: 14px;
+      color: #8AA4CC;
+      font-weight: 300;
+    }
 
-  .tech-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
+    .cover-context {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+    }
 
-  .tech-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: #8AA4CC;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 3px 10px;
-    border-radius: 2px;
-  }
+    .cover-context p {
+      font-size: 13px;
+      color: #B8CADD;
+      line-height: 1.65;
+    }
 
-  /* CONTENT */
-  .content { padding: 40px 48px; }
+    /* CONTENT */
+    .content {
+      padding: 40px 48px;
+    }
 
-  .section { margin-bottom: 40px; }
+    .section {
+      margin-bottom: 44px;
+    }
 
-  .section-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
-  /* PROJECT TABLE */
-  .project-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
+    /* INSIGHT CARD */
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
 
-  .project-table thead th {
-    background: var(--navy);
-    color: #8AA4CC;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 10px 14px;
-    text-align: left;
-    border: none;
-  }
+    .insight-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-  .project-table tbody tr {
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s;
-  }
+    .insight-header {
+      background: var(--navy);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .project-table tbody tr:hover { background: var(--light-blue); }
+    .insight-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.03em;
+    }
 
-  .project-table td {
-    padding: 13px 14px;
-    vertical-align: top;
-  }
+    .insight-kpi {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-  .proj-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    font-weight: 600;
-    white-space: nowrap;
-  }
+    .kpi-up {
+      color: #5ECFA0;
+    }
 
-  .proj-name {
-    font-weight: 600;
-    color: var(--navy);
-    font-size: 13.5px;
-    margin-bottom: 3px;
-  }
+    .kpi-warn {
+      color: #FFC355;
+    }
 
-  .proj-question {
-    color: var(--muted);
-    font-size: 12px;
-    font-style: italic;
-  }
+    .kpi-down {
+      color: #FF7A6A;
+    }
 
-  .tool-pill {
-    display: inline-block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    background: var(--light-blue);
-    color: var(--blue);
-    border: 1px solid var(--border);
-    padding: 2px 7px;
-    border-radius: 2px;
-    margin: 2px 2px 2px 0;
-  }
+    .insight-body {
+      padding: 14px 16px;
+    }
 
-  .outcome-val {
-    font-weight: 600;
-    color: var(--green);
-    font-size: 13px;
-  }
+    .finding {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
 
-  .status-pill {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 2px;
-    letter-spacing: 0.06em;
-  }
+    .finding:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
 
-  .status-live { background: #E6F4EE; color: var(--green); border: 1px solid #9ECBB8; }
-  .status-planned { background: #FFF4E5; color: #8C5A00; border: 1px solid #F0C980; }
+    .finding-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
 
-  /* SKILLS GRID */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
+    .finding-text {
+      font-size: 12.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
 
-  .skill-card {
-    background: var(--light-blue);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--navy);
-    padding: 16px;
-    border-radius: 0 0 4px 4px;
-  }
+    .action-box {
+      background: #FFF8EC;
+      border-left: 3px solid var(--gold);
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 0 4px 4px 0;
+    }
 
-  .skill-card.accent-gold { border-top-color: var(--gold); }
-  .skill-card.accent-accent { border-top-color: var(--accent); }
+    .action-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2px;
+    }
 
-  .skill-card-title {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
+    .action-text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.45;
+    }
 
-  .skill-item {
-    font-size: 12.5px;
-    color: var(--text);
-    margin-bottom: 5px;
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
-  }
+    /* CATEGORY SCORECARD */
+    .scorecard-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
 
-  .skill-item::before {
-    content: '—';
-    color: var(--gold);
-    font-weight: 600;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
+    .scorecard-table thead th {
+      background: var(--navy);
+      color: #8AA4CC;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+    }
 
-  /* SCHEMA */
-  .schema-block {
-    background: var(--navy);
-    border-radius: 4px;
-    padding: 24px 28px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
+    .scorecard-table thead th:not(:first-child) {
+      text-align: right;
+    }
 
-  .schema-col-title {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
+    .scorecard-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
 
-  .schema-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    padding: 5px 0;
-    font-size: 12px;
-  }
+    .scorecard-table tbody tr:hover {
+      background: var(--light-blue);
+    }
 
-  .schema-name {
-    font-family: 'IBM Plex Mono', monospace;
-    color: #7FB3E8;
-    font-size: 11.5px;
-  }
+    .scorecard-table td {
+      padding: 11px 14px;
+      vertical-align: middle;
+    }
 
-  .schema-grain {
-    font-size: 11px;
-    color: #6A7D9A;
-  }
+    .scorecard-table td:not(:first-child) {
+      text-align: right;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+    }
 
-  .schema-count {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: #8AA4CC;
-  }
+    .cat-name {
+      font-weight: 600;
+      color: var(--navy);
+    }
 
-  /* KPI STRIP */
-  .kpi-strip {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-  }
+    .growth-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-end;
+    }
 
-  .kpi-card {
-    background: var(--light-blue);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 14px 12px;
-    text-align: center;
-  }
+    .growth-bar {
+      height: 6px;
+      border-radius: 3px;
+      min-width: 4px;
+    }
 
-  .kpi-label {
-    font-size: 10px;
-    color: var(--muted);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
+    .bar-positive {
+      background: var(--green);
+    }
 
-  .kpi-value {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+    .bar-negative {
+      background: var(--red);
+    }
 
-  .kpi-sub {
-    font-size: 10px;
-    color: var(--green);
-    margin-top: 3px;
-    font-weight: 500;
-  }
+    .tag-green {
+      color: var(--green);
+      font-weight: 600;
+    }
 
-  /* NAV LINKS */
-  .nav-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
+    .tag-red {
+      color: var(--red);
+      font-weight: 600;
+    }
 
-  .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--navy);
-    color: var(--white);
-    text-decoration: none;
-    padding: 12px 16px;
-    border-radius: 4px;
-    font-size: 12.5px;
-    font-weight: 500;
-    transition: background 0.15s;
-  }
+    .tag-amber {
+      color: var(--amber);
+      font-weight: 600;
+    }
 
-  .nav-link:hover { background: var(--blue); }
+    /* PROMO MECHANICS */
+    .mech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
 
-  .nav-link-icon {
-    font-size: 16px;
-    opacity: 0.7;
-  }
+    .mech-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-  /* PHILOSOPHY */
-  .philosophy-box {
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--gold);
-    padding: 20px 24px;
-    border-radius: 0 4px 4px 0;
-    background: #FAFBFD;
-  }
+    .mech-header {
+      padding: 10px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
 
-  .philosophy-box p {
-    font-size: 13.5px;
-    color: var(--text);
-    line-height: 1.7;
-  }
+    .mech-tpr {
+      background: #0A4F8C;
+    }
 
-  /* FOOTER */
-  .footer {
-    background: var(--navy);
-    padding: 20px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-  }
+    .mech-bogo {
+      background: #1A7A4A;
+    }
 
-  .footer-note {
-    font-size: 11px;
-    color: #4A6080;
-    font-family: 'IBM Plex Mono', monospace;
-  }
+    .mech-feat {
+      background: #7A4A00;
+    }
 
-  .footer-tag {
-    font-size: 11px;
-    color: var(--gold);
-    font-weight: 600;
-  }
-</style>
+    .mech-disp {
+      background: #5A1A6B;
+    }
+
+    .mech-body {
+      padding: 12px;
+    }
+
+    .mech-stat {
+      margin-bottom: 8px;
+    }
+
+    .mech-stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .mech-stat-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .mech-note {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+
+    /* RISK TABLE */
+    .risk-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .risk-table th {
+      background: var(--navy);
+      color: #8AA4CC;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .risk-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .risk-sev {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .sev-high {
+      background: var(--red-light);
+      color: var(--red);
+      border: 1px solid #F0B0A0;
+    }
+
+    .sev-med {
+      background: var(--amber-light);
+      color: var(--amber);
+      border: 1px solid #F0C980;
+    }
+
+    .sev-low {
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid #9ECBB8;
+    }
+
+    /* OTIF BLOCK */
+    .supplier-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .supplier-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .sup-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      min-height: 28px;
+    }
+
+    .sup-otif {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .sup-gap {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .sup-target {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* RECOMMENDATIONS */
+    .reco-list {
+      list-style: none;
+    }
+
+    .reco-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .reco-item:last-child {
+      border-bottom: none;
+    }
+
+    .reco-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reco-content {}
+
+    .reco-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .reco-body {
+      font-size: 12.5px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .reco-impact {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green);
+      background: var(--green-light);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: #4A6080;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .footer-tag {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ---- utilities added for rewritten layers ---- */
+    .kpi-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 4px 0 8px;
+    }
+
+    .kpi-cell {
+      flex: 1 1 150px;
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .kpi-cell .kpi-label {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .kpi-cell .kpi-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    .kpi-cell .kpi-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .note {
+      background: var(--light-blue);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+
+    .note.warn {
+      background: var(--amber-light);
+      border-left-color: var(--amber);
+    }
+
+    .note .note-label {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .note.warn .note-label {
+      color: var(--amber);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .codeblock {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      line-height: 1.55;
+      background: var(--navy);
+      color: #D6E2F5;
+      border-radius: 8px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      margin: 8px 0;
+    }
+
+    .codeblock .c {
+      color: #6E86AE;
+    }
+
+    .dm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .dm-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dm-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: var(--white);
+    }
+
+    .dm-card h4 {
+      font-size: 13px;
+      color: var(--navy);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .dm-card p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+  </style>
 </head>
+
 <body>
-<div class="page">
+  <div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-top">
-      <div>
-        <h1>Retail CPG Analytics Portfolio</h1>
-        <div class="tagline">Power BI · SQL · DAX · Walmart Scintilla-Style · Five End-to-End Projects</div>
-      </div>
-      <div class="badge">Layer 1 · Portfolio README</div>
-    </div>
-    <div class="bio">
-      Built on a synthetic Walmart Scintilla-style database. Each project is end-to-end — raw data to executive output — covering the full vendor analytics cycle: sales drivers, inventory health, promotional effectiveness, supply chain performance, and a complete SQL-to-Power BI pipeline. Documentation is treated as a deliverable alongside every dashboard.
-    </div>
-    <div class="tech-tags">
-      <span class="tech-tag">MySQL Workbench</span>
-      <span class="tech-tag">Power BI Desktop</span>
-      <span class="tech-tag">DAX · 77 Measures</span>
-      <span class="tech-tag">Star Schema · 4F + 7D</span>
-      <span class="tech-tag">NRF 52-Week Fiscal Cal</span>
-      <span class="tech-tag">Walmart Scintilla Logic</span>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <!-- KPI STRIP -->
-    <div class="kpi-strip">
-      <div class="kpi-card">
-        <div class="kpi-label">Total Sales TY</div>
-        <div class="kpi-value">$32.2M</div>
-        <div class="kpi-sub">+6.8% YoY</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Gross Margin</div>
-        <div class="kpi-value">28.0%</div>
-        <div class="kpi-sub">$9.0M GM$</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">In-Stock Rate</div>
-        <div class="kpi-value">88.9%</div>
-        <div class="kpi-sub">vs. 95% target</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">OTIF Rate</div>
-        <div class="kpi-value">91.3%</div>
-        <div class="kpi-sub">vs. 93.4% goal</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">DAX Measures</div>
-        <div class="kpi-value">77</div>
-        <div class="kpi-sub">6 display folders</div>
-      </div>
-    </div>
-
-    <!-- PROJECT TABLE -->
-    <div class="section">
-      <div class="section-label">Portfolio snapshot</div>
-      <table class="project-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Project</th>
-            <th>Business question</th>
-            <th>Tools</th>
-            <th>Key outcome</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="proj-num">P1</td>
-            <td>
-              <div class="proj-name">Retail Sales Drivers</div>
-              <div class="proj-question">Scintilla-style vendor view</div>
-            </td>
-            <td style="font-size:12.5px; color: var(--text);">Which categories are driving or dragging YoY sales growth? Where is the delta coming from — price or volume?</td>
-            <td>
-              <span class="tool-pill">SQL</span>
-              <span class="tool-pill">Power BI</span>
-              <span class="tool-pill">DAX</span>
-            </td>
-            <td><span class="outcome-val">+6.8% YoY</span><br><span style="font-size:11px; color:var(--muted);">5-page dashboard · price/volume decomp</span></td>
-            <td><span class="status-pill status-live">Live</span></td>
-          </tr>
-          <tr>
-            <td class="proj-num">P2</td>
-            <td>
-              <div class="proj-name">Inventory & In-Stock Health</div>
-              <div class="proj-question">Replenishment analyst view</div>
-            </td>
-            <td style="font-size:12.5px; color: var(--text);">Where are we losing sales to stockouts? Which store/item pairs are at risk, and what is the dollar cost?</td>
-            <td>
-              <span class="tool-pill">SQL</span>
-              <span class="tool-pill">Power BI</span>
-              <span class="tool-pill">DAX</span>
-            </td>
-            <td><span class="outcome-val">$4.1M lost sales</span><br><span style="font-size:11px; color:var(--muted);">quantified · 88.9% in-stock rate</span></td>
-            <td><span class="status-pill status-live">Live</span></td>
-          </tr>
-          <tr>
-            <td class="proj-num">P3</td>
-            <td>
-              <div class="proj-name">Category & Promo Analytics</div>
-              <div class="proj-question">Trade promotion effectiveness</div>
-            </td>
-            <td style="font-size:12.5px; color: var(--text);">Which promo mechanic (TPR/BOGO/Feature/Display) delivers the best lift and trade ROI by category?</td>
-            <td>
-              <span class="tool-pill">SQL</span>
-              <span class="tool-pill">Power BI</span>
-              <span class="tool-pill">DAX</span>
-            </td>
-            <td><span class="outcome-val">19.5% avg lift</span><br><span style="font-size:11px; color:var(--muted);">128 promo events · $496K trade spend</span></td>
-            <td><span class="status-pill status-live">Live</span></td>
-          </tr>
-          <tr>
-            <td class="proj-num">P4</td>
-            <td>
-              <div class="proj-name">Supply Chain Forecasting</div>
-              <div class="proj-question">OTIF & demand accuracy</div>
-            </td>
-            <td style="font-size:12.5px; color: var(--text);">Which suppliers are missing Walmart's OTIF target? How does forecast accuracy affect in-stock performance?</td>
-            <td>
-              <span class="tool-pill">SQL</span>
-              <span class="tool-pill">Power BI</span>
-              <span class="tool-pill">DAX</span>
-            </td>
-            <td><span class="outcome-val">91.3% OTIF</span><br><span style="font-size:11px; color:var(--muted);">ML MAPE 2.0% vs naive 2.6%</span></td>
-            <td><span class="status-pill status-live">Live</span></td>
-          </tr>
-          <tr>
-            <td class="proj-num">P5</td>
-            <td>
-              <div class="proj-name">SQL → Power BI Pipeline</div>
-              <div class="proj-question">End-to-end data engineering</div>
-            </td>
-            <td style="font-size:12.5px; color: var(--text);">How do you build a production-grade analytics pipeline from raw CSVs to an executive dashboard?</td>
-            <td>
-              <span class="tool-pill">Python</span>
-              <span class="tool-pill">SQL</span>
-              <span class="tool-pill">Power BI</span>
-            </td>
-            <td><span class="outcome-val">7 SQL views</span><br><span style="font-size:11px; color:var(--muted);">full ETL + DirectQuery pattern</span></td>
-            <td><span class="status-pill status-planned">Planned</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- SKILLS -->
-    <div class="section">
-      <div class="section-label">Competency areas</div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-card-title">Analytics & BI</div>
-          <div class="skill-item">Power BI Desktop (star schema, Import mode)</div>
-          <div class="skill-item">DAX — 77 measures across 6 display folders</div>
-          <div class="skill-item">Custom NRF 52-week fiscal calendar patterns</div>
-          <div class="skill-item">Price/volume YoY decomposition</div>
-          <div class="skill-item">CALCULATE / FILTER / ALL DAX patterns</div>
-        </div>
-        <div class="skill-card accent-accent">
-          <div class="skill-card-title">Data Engineering</div>
-          <div class="skill-item">MySQL / SQLite — views, CTEs, window functions</div>
-          <div class="skill-item">Star schema: 4 fact tables + 7 dimensions</div>
-          <div class="skill-item">ETL: CSV → SQL → Power BI</div>
-          <div class="skill-item">Referential integrity & data quality enforcement</div>
-          <div class="skill-item">7 analytical views as semantic layer</div>
-        </div>
-        <div class="skill-card accent-gold">
-          <div class="skill-card-title">CPG Domain</div>
-          <div class="skill-item">Walmart Scintilla vendor portal logic</div>
-          <div class="skill-item">OTIF performance measurement (WM standard)</div>
-          <div class="skill-item">Trade promo: TPR/BOGO/Feature/Display</div>
-          <div class="skill-item">In-stock rate, fill rate, lost sales quantification</div>
-          <div class="skill-item">JBP-ready KPI framing (velocity, ACV, WOS)</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DATA MODEL -->
-    <div class="section">
-      <div class="section-label">Data model</div>
-      <div class="schema-block">
+    <!-- ============ HEADER ============ -->
+    <div class="cover">
+      <div class="cover-meta">
         <div>
-          <div class="schema-col-title">Fact tables</div>
-          <div class="schema-row">
-            <span class="schema-name">Fact_WeeklySales</span>
-            <span class="schema-grain">Week × Store × Item</span>
-            <span class="schema-count">26,000</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Fact_Inventory</span>
-            <span class="schema-grain">Week × Store × Item</span>
-            <span class="schema-count">26,000</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Fact_PromoCalendar</span>
-            <span class="schema-grain">Week × Item</span>
-            <span class="schema-count">520</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Fact_SupplyChain</span>
-            <span class="schema-grain">Week × Item</span>
-            <span class="schema-count">520</span>
-          </div>
+          <div class="cover-label">Portfolio README</div>
+          <h1>Retail CPG Analytics<br>Vendor Performance Portfolio</h1>
+          <div class="cover-sub">Power BI &middot; SQL &middot; DAX &middot; Walmart Scintilla-Style &middot; Five End-to-End Projects</div>
         </div>
-        <div>
-          <div class="schema-col-title">Dimension tables</div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_Date</span>
-            <span class="schema-grain">Week (TY + LY) · NRF fiscal</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_Store</span>
-            <span class="schema-grain">600 stores · 5 regions</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_Item</span>
-            <span class="schema-grain">10 SKUs · 5 categories</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_Category</span>
-            <span class="schema-grain">Home Care · Beauty · Bev · Snacks · Pet</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_Supplier</span>
-            <span class="schema-grain">5 suppliers with OTIF targets</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_PromoMechanism</span>
-            <span class="schema-grain">TPR / BOGO / Feature / Display</span>
-          </div>
-          <div class="schema-row">
-            <span class="schema-name">Dim_Fineline</span>
-            <span class="schema-grain">Sub-category product groupings</span>
-          </div>
-        </div>
+        <div class="badge">Layer 1 &middot; README</div>
+      </div>
+      <div class="cover-context">
+        <p>A synthetic Walmart Scintilla-style vendor dataset taken from raw data to executive output. The portfolio covers the full vendor analytics cycle: sales drivers, inventory health, promotional effectiveness, and supply chain reliability. Every project is framed around the decision a category or vendor team has to make, and what the numbers say they should do about it.</p>
       </div>
     </div>
 
-    <!-- PHILOSOPHY -->
-    <div class="section">
-      <div class="section-label">Portfolio design philosophy</div>
-      <div class="philosophy-box">
-        <p>Every project in this portfolio mirrors a real vendor analytics workflow — the kind that runs between a CPG supplier and a major retailer. Each is built end-to-end: data model to SQL views to Power BI dashboard to executive output. The synthetic dataset is modeled on Walmart Scintilla's vendor portal structure, with enforced data quality, realistic YoY growth patterns (~6.3–6.8%), and accurate promo lift mechanics across four trade mechanic types. Documentation — READMEs, data dictionaries, DAX reference guides — is treated as a deliverable on the same level as the dashboards themselves.</p>
+    <div class="content">
+
+      <!-- ============ HEADLINE KPIS ============ -->
+      <div class="section">
+        <div class="section-label">Portfolio at a glance</div>
+        <div class="kpi-strip">
+          <div class="kpi-cell">
+            <div class="kpi-label">Total Sales TY</div>
+            <div class="kpi-value">$32.23M</div>
+            <div class="kpi-sub">+6.8% YoY, volume led</div>
+          </div>
+          <div class="kpi-cell">
+            <div class="kpi-label">Gross Margin</div>
+            <div class="kpi-value">28.0%</div>
+            <div class="kpi-sub">$9.02M GM dollars</div>
+          </div>
+          <div class="kpi-cell">
+            <div class="kpi-label">In-Stock Rate</div>
+            <div class="kpi-value">88.9%</div>
+            <div class="kpi-sub">vs. 95% target, $4.1M lost</div>
+          </div>
+          <div class="kpi-cell">
+            <div class="kpi-label">OTIF Compliance</div>
+            <div class="kpi-value">55.0%</div>
+            <div class="kpi-sub">On-Time 90.8%, In-Full 60.0%</div>
+          </div>
+        </div>
+        <div class="note">
+          <div class="note-label">Headline read</div>
+          Growth is healthy and volume driven, but two problems are leaving money on the table: an in-stock gap worth $4.1M in lost sales, and an OTIF compliance gap that is almost entirely an in-full (shortage) problem rather than a delivery-timing one. Both are addressable with replenishment and order-accuracy fixes, not new demand.
+        </div>
       </div>
+
+      <!-- ============ PROJECT SNAPSHOT ============ -->
+      <div class="section">
+        <div class="section-label">Project snapshot</div>
+        <table class="scorecard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Project</th>
+              <th>Business question</th>
+              <th>Key finding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1</strong></td>
+              <td>Retail Sales Drivers</td>
+              <td>Which categories drive or drag YoY growth, and is the delta price or volume?</td>
+              <td>+6.8% YoY, volume led; Beverages strongest at +8.0%, Pet lagging at +4.0%</td>
+            </tr>
+            <tr>
+              <td><strong>P2</strong></td>
+              <td>Inventory &amp; In-Stock Health</td>
+              <td>Where are stockouts costing sales, and what is the dollar impact?</td>
+              <td>88.9% in-stock, $4.1M lost across 419K units, 1.4 weeks of supply</td>
+            </tr>
+            <tr>
+              <td><strong>P3</strong></td>
+              <td>Category &amp; Promo Analytics</td>
+              <td>Which promo mechanic delivers the best trade ROI?</td>
+              <td>TPR absorbs 54% of trade spend at 0.37 ROI; Feature and Display far more efficient</td>
+            </tr>
+            <tr>
+              <td><strong>P4</strong></td>
+              <td>Supply Chain &amp; OTIF</td>
+              <td>Which suppliers miss Walmart OTIF, and why?</td>
+              <td>55.0% OTIF compliance; In-Full (60.0%) is the binding constraint; $304K fine exposure</td>
+            </tr>
+            <tr>
+              <td><strong>P5</strong></td>
+              <td>SQL to Power BI Pipeline</td>
+              <td>How is the analytics pipeline built from raw CSVs to dashboard?</td>
+              <td>Star schema, 77 DAX measures, NRF fiscal handling, documented end to end</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ============ DATA MODEL ============ -->
+      <div class="section">
+        <div class="section-label">Data model</div>
+        <div class="dm-grid">
+          <div class="dm-card">
+            <h4>Fact_WeeklySales</h4>
+            <p>Week &times; Store &times; Item &middot; 26,000 rows &middot; TY/LY sales, units, margin, promo flag</p>
+          </div>
+          <div class="dm-card">
+            <h4>Fact_Inventory</h4>
+            <p>Week &times; Store &times; Item &middot; 26,000 rows &middot; on-hand, lost sales, weeks of supply, fill rate</p>
+          </div>
+          <div class="dm-card">
+            <h4>Fact_PromoCalendar</h4>
+            <p>Week &times; Item &middot; 520 rows &middot; lift, incremental units, trade spend, ROI</p>
+          </div>
+          <div class="dm-card">
+            <h4>Fact_SupplyChain</h4>
+            <p>Week &times; Item &middot; 520 PO lines &middot; OTIF, on-time, in-full, shortage, fine exposure</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_Store</h4>
+            <p>600 stores across 5 regions, formats and volume tiers</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_Item</h4>
+            <p>10 SKUs across 5 categories, with base price and velocity</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_Supplier</h4>
+            <p>5 suppliers, each with a contractual OTIF target</p>
+          </div>
+          <div class="dm-card">
+            <h4>Dim_Date</h4>
+            <p>NRF 52-week fiscal calendar, TY and LY weeks pre-aligned</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ COMPETENCY ============ -->
+      <div class="section">
+        <div class="section-label">Competency areas</div>
+        <div class="two-col">
+          <div class="dm-card">
+            <h4>Analytics &amp; BI</h4>
+            <p>Power BI star schema (Import mode); 77 DAX measures across 6 display folders; NRF 52-week fiscal calendar patterns; price vs. volume YoY decomposition.</p>
+          </div>
+          <div class="dm-card">
+            <h4>Data engineering</h4>
+            <p>MySQL views, CTEs and window functions; star schema of 4 fact and 7 dimension tables; CSV to SQL to Power BI ETL with referential integrity enforced.</p>
+          </div>
+          <div class="dm-card">
+            <h4>CPG domain</h4>
+            <p>Walmart Scintilla vendor logic; OTIF measured to the Walmart standard (on-time and in-full); trade promo mechanics; in-stock, fill rate and lost-sales quantification.</p>
+          </div>
+          <div class="dm-card">
+            <h4>Decision framing</h4>
+            <p>Every dashboard ends in a recommendation. Findings are tied to a dollar impact and a named owner action, in the format a vendor review uses.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ NAVIGATE ============ -->
+      <div class="section">
+        <div class="section-label">Navigate this portfolio</div>
+        <div class="kpi-strip">
+          <div class="kpi-cell">
+            <div class="kpi-label">Layer 2</div>
+            <div class="kpi-sub" style="margin-top:6px;">Executive briefing: findings and recommendations</div>
+          </div>
+          <div class="kpi-cell">
+            <div class="kpi-label">Layer 3</div>
+            <div class="kpi-sub" style="margin-top:6px;">Technical reference: model, SQL and DAX</div>
+          </div>
+          <div class="kpi-cell">
+            <div class="kpi-label">Layer 4</div>
+            <div class="kpi-sub" style="margin-top:6px;">CPG domain: metrics in context</div>
+          </div>
+          <div class="kpi-cell">
+            <div class="kpi-label">Layer 5</div>
+            <div class="kpi-sub" style="margin-top:6px;">Process and judgment: key decisions</div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- NAVIGATION -->
-    <div class="section">
-      <div class="section-label">Navigate this portfolio</div>
-      <div class="nav-grid">
-        <a href="#" class="nav-link"><span class="nav-link-icon">📄</span> Data Dictionary</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">📊</span> DAX Measures Reference</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">📈</span> P1 · Sales Drivers</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">📦</span> P2 · Inventory Health</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">🎯</span> P3 · Promo Analytics</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">🚚</span> P4 · Supply Chain</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">🔧</span> P5 · SQL Pipeline</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">💼</span> Executive Deck</a>
-        <a href="#" class="nav-link"><span class="nav-link-icon">📝</span> SQL Views</a>
-      </div>
+    <div class="footer">
+      <span class="footer-note">Retail_CPG_Analytics &middot; Synthetic Scintilla-style dataset &middot; 600 stores &middot; 5 categories &middot; 10 SKUs</span>
+      <span class="footer-tag">Layer 1 &middot; README</span>
     </div>
 
   </div>
-
-  <div class="footer">
-    <span class="footer-note">Retail_CPG_Analytics_Portfolio · Scintilla-style synthetic dataset · FY2024–2025</span>
-    <span class="footer-tag">Layer 1 · Master README</span>
-  </div>
-
-</div>
 </body>
+
 </html>
